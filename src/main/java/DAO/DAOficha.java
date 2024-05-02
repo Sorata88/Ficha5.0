@@ -24,26 +24,24 @@ public class DAOficha {
 
     public void crear_ficha(Ficha n) throws SQLException{
 
-        String query = "INSERT INTO ficha (idficha, idjugador, nombre, nombrepj, idraza, idclase, nivel, trasfondo, alineamiento, xp, bono_competencia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO ficha (idficha, nombre, nombrepj, idraza, idclase, nivel, trasfondo, alineamiento, px) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        PreparedStatement ps = conn.prepareStatement(query);
+        try (PreparedStatement ps = conn.prepareStatement(query)) {
 
-        ps.setInt(1, n.getIdficha());
-        ps.setInt(2, n.getIdjugador());
-        ps.setString(3, n.getNombre());
-        ps.setString(4, n.getNombrepj());
-        ps.setInt(5, n.getIdraza());
-        ps.setInt(6, n.getIdclase());
-        ps.setInt(7, n.getNivel());
-        ps.setString(8, n.getTrasfondo());
-        ps.setInt(9, n.getAlineamiento());
-        //noinspection JpaQueryApiInspection
-        ps.setInt(10, n.getXp());
-        //noinspection JpaQueryApiInspection
-        ps.setInt(11, n.getBono_competencia());
-        ps.executeUpdate();
+            ps.setInt(1, n.getIdficha());
+            ps.setString(2, n.getNombre());
+            ps.setString(3, n.getNombrepj());
+            ps.setInt(4, n.getIdraza());
+            ps.setInt(5, n.getIdclase());
+            ps.setInt(6, n.getNivel());
+            ps.setString(7, n.getTrasfondo());
+            ps.setString(8, n.getAlineamiento());
+            ps.setInt(9, n.getPx());
 
-        ps.close();
+            ps.executeUpdate();
+
+            ps.close();
+        }
 
     }
 

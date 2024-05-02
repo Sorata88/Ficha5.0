@@ -12,7 +12,7 @@
   <body>
     <header><strong>HOJA DE PERSONAJE</strong></header>
     <nav>
-      <form name="ficha" action="" method="post" enctype="multipart/form-data"></form>
+      <form name="ficha" action="Crear_ficha" method="post">
         <table class="principal">
           <tr>
             <th>Nombre del jugador</th>
@@ -24,13 +24,13 @@
           
           <tr>
             <td>
-                <label for="nombrepersonaje"></label><input type="text" name="Nombre del personaje" id="nombrepersonaje">
+                <label for="nombrepersonaje"></label><input type="text" name="nombrepersonaje" id="nombrepersonaje">
             </td>
             <td>
-                <label for="nombreplayer"></label><input type="text" name="Nombre del jugador" id="nombreplayer">
+                <label for="nombrejugador"></label><input type="text" name="nombrejugador" id="nombrejugador">
             </td>
             <td>
-                <label for="trasfondo"></label><input type="text" name="Trasfondo" id="trasfondo">
+                <label for="trasfondo"></label><input type="text" name="trasfondo" id="trasfondo">
             </td>
             <td>
                 <label for="clase"></label><select name="clase" id="clase">
@@ -46,12 +46,12 @@
                 <option value="10">Monje</option>
                 <option value="11">Paladín</option>
                 <option value="12">Pícaro</option>
-                <option value="0" selected></option>
+                <option value="0" disabled selected></option>
               </select>  
             </td>
             
             <td>
-                <label for="nivel"></label><select name="Nivel" id="nivel">
+                <label for="nivel"></label><select name="nivel" id="nivel">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -80,14 +80,14 @@
             <th>Puntos de experiencia</th>
             <th>Raza</th>
             <th>Subraza</th>
+            <th><input type="submit"></th>
           </tr>
           <tr>
             <td>
-                <label for="alineamiento"></label><input
-                type="text" name="alineamiento" id="alineamiento" />
+                <label for="alineamiento"></label><input type="text" name="alineamiento" id="alineamiento">
             </td>
             <td>
-                <label for="PX"></label><input type="text" name="PX" id="PX" />
+                <label for="px"></label><input type="text" name="px" id="px" />
             </td>
             <td>
                 <label for="raza"></label><select name="raza" id="raza">
@@ -100,7 +100,7 @@
                 <option value="7">Semielfo</option>
                 <option value="8">Semiorco</option>
                 <option value="9">Tiefling</option>
-                <option value="0" selected></option>
+                <option value="0" disabled selected></option>
               </select>  
             </td>
             <td>
@@ -114,7 +114,7 @@
                 <option value="7">Fornido</option>
                 <option value="8">Gnomo de los bosques</option>
                 <option value="9">Gnomo de las rocas</option>
-                <option value="0" selected></option>
+                <option value="0" disabled selected></option>
               </select>  
             </td>
           </tr>
@@ -291,7 +291,7 @@
             <label for="inspiración"></label><input type="checkbox" id="inspiración">
             <label for="Inspiración">Inspiración</label>
             <hr>
-            <select name="Bonocompetencia" id="Bonocompetencia">
+            <select name="bono_competencia" id="bono_competencia">
               <option value="1">+1</option>
               <option value="2">+2</option>
               <option value="3">+3</option>
@@ -299,7 +299,7 @@
               <option value="5">+5</option>
               <option value="6">+6</option>
             </select>
-            <label for="Bonocompetencia" style="font-weight: 600;">Bonificador de competencia</label>
+            <label for="bono_competencia" style="font-weight: 600;">Bonificador de competencia</label>
             <br>
         </div>
         <div class="columna1">
