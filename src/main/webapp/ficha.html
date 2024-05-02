@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/ficha.css" />
+    <script src="ficha.js" type="text/javascript"></script>
+    <title>Hoja de personaje</title>
+    <a href="https://dnd.wizards.com/es"><img src="img/dnd2.jpg" alt="cabecera" width="100%"></img></a>
+  </head>
+
+  <body>
+    <header><strong>HOJA DE PERSONAJE</strong></header>
+    <nav>
+      <form name="ficha" action="" method="post" enctype="multipart/form-data"></form>
+        <table class="principal">
+          <tr>
+            <th>Nombre del jugador</th>
+            <th>Nombre del personaje</th>
+            <th>Trasfondo</th>
+            <th>Clase</th>
+            <th rowspan="">Nivel</th>
+          </tr>
+          
+          <tr>
+            <td>
+                <input type="nombrepersonaje" name="Nombre del personaje" id="nombrepersonaje" />
+            </td>
+            <td>
+              <input type="nombrejugador" name="Nombre del jugador" id="nombreplayer" />
+            </td>
+            <td>
+              <input type="trasfondo" name="Trasfondo" id="trasfondo" />
+            </td>
+            <td>
+              <select name="clase" id="clase">
+                <option value="1">Bárbaro</option>
+                <option value="2">Bardo</option>
+                <option value="3">Brujo</option>
+                <option value="4">Clérigo</option>
+                <option value="5">Druida</option>
+                <option value="6">Explorador</option>
+                <option value="7">Guerrero</option>
+                <option value="8">Hechicero</option>
+                <option value="9">Mago</option>
+                <option value="10">Monje</option>
+                <option value="11">Paladín</option>
+                <option value="12">Pícaro</option>
+                <option value="0" selected></option>
+              </select>  
+            </td>
+            
+            <td>
+              <select name="Nivel" id="nivel">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Alineamiento</th>
+            <th>Puntos de experiencia</th>
+            <th>Raza</th>
+            <th>Subraza</th>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="alineamiento" name="alineamiento" id="alineamiento" />
+            </td>
+            <td>
+              <input type="PX" name="PX" id="PX" />
+            </td>
+            <td>
+              <select name="raza" id="raza">
+                <option value="1">Enano</option>
+                <option value="2">Elfo</option>
+                <option value="3">Mediano</option>
+                <option value="4">Humano</option>
+                <option value="5">Dracónido</option>
+                <option value="6">Gnomo</option>
+                <option value="7">Semielfo</option>
+                <option value="8">Semiorco</option>
+                <option value="9">Tiefling</option>
+                <option value="0" selected></option>
+              </select>  
+            </td>
+            <td>
+              <select name="subraza" id="subraza">
+                <option value="1">Enano de las colinas</option>
+                <option value="2">Enano de las montañas</option>
+                <option value="3">Alto elfo</option>
+                <option value="4">Elfo de los bosques</option>
+                <option value="5">Elfo oscuro (drow)</option>
+                <option value="6">Piesligeros</option>
+                <option value="7">Fornido</option>
+                <option value="8">Gnomo de los bosques</option>
+                <option value="9">Gnomo de las rocas</option>
+                <option value="0" selected></option>
+              </select>  
+            </td>
+          </tr>
+        </table>
+      </form>
+    </nav>
+    <section class="cuerpo">
+    <div class="Características">
+      <form action="">
+        <table>
+          <tr>
+            <label for="Fuerza">
+              <p><strong>FUERZA</strong></p>
+            </label>
+            <textarea class="Fuerza" name="Fuerza" id="FUE" cols="1" rows="1" style="font-size: xx-large" style="border: 1"></textarea>
+            <br><br>
+            <select name="mod_fuerza" id="mod_fuerza">
+              <option value="1">-5</option>
+              <option value="2">-4</option>
+              <option value="3">-3</option>
+              <option value="4">-2</option>
+              <option value="5">-1</option>
+              <option value="6" selected>+0</option>
+              <option value="7">+1</option>
+              <option value="8">+2</option>
+              <option value="9">+3</option>
+              <option value="10">+4</option>
+              <option value="11">+5</option>
+              <option value="12">+6</option>
+              <option value="13">+7</option>
+              <option value="14">+8</option>
+              <option value="15">+9</option>
+              <option value="16">+10</option>
+            </select>
+          </tr><hr>
+          <tr>
+            <label for="Destreza">
+              <p><strong>DESTREZA</strong></p>
+            </label>
+            <textarea name="Destreza" id="DES" cols="1" rows="1" style="font-size: xx-large" style="border: 1"></textarea>
+            <br><br>
+            <select name="mod_destreza" id="mod_destreza">
+              <option value="1">-5</option>
+              <option value="2">-4</option>
+              <option value="3">-3</option>
+              <option value="4">-2</option>
+              <option value="5">-1</option>
+              <option value="6" selected>+0</option>
+              <option value="7">+1</option>
+              <option value="8">+2</option>
+              <option value="9">+3</option>
+              <option value="10">+4</option>
+              <option value="11">+5</option>
+              <option value="12">+6</option>
+              <option value="13">+7</option>
+              <option value="14">+8</option>
+              <option value="15">+9</option>
+              <option value="16">+10</option>
+            </select>
+          </tr><hr>
+          <tr>
+            <label for="Constitucion">
+              <p><strong>CONSTITUCIÓN</strong></p>
+            </label>
+            <textarea name="Constitucion" id="CON" cols="1" rows="1" style="font-size: xx-large" style="border: 1"></textarea>
+            <br><br>
+            <select name="mod_constitucion" id="mod_constitucion">
+              <option value="1">-5</option>
+              <option value="2">-4</option>
+              <option value="3">-3</option>
+              <option value="4">-2</option>
+              <option value="5">-1</option>
+              <option value="6" selected>+0</option>
+              <option value="7">+1</option>
+              <option value="8">+2</option>
+              <option value="9">+3</option>
+              <option value="10">+4</option>
+              <option value="11">+5</option>
+              <option value="12">+6</option>
+              <option value="13">+7</option>
+              <option value="14">+8</option>
+              <option value="15">+9</option>
+              <option value="16">+10</option>
+            </select>
+          </tr><hr>
+          <tr>
+            <label for="Inteligencia">
+              <strong>
+                <p>INTELIGENCIA</p>
+              </strong>
+            </label>
+            <textarea name="Inteligencia" id="INT" cols="1" rows="1" style="font-size: xx-large" style="border: 1"></textarea>
+            <br><br>
+            <select name="mod_inteligencia" id="mod_inteligencia">
+              <option value="1">-5</option>
+              <option value="2">-4</option>
+              <option value="3">-3</option>
+              <option value="4">-2</option>
+              <option value="5">-1</option>
+              <option value="6" selected>+0</option>
+              <option value="7">+1</option>
+              <option value="8">+2</option>
+              <option value="9">+3</option>
+              <option value="10">+4</option>
+              <option value="11">+5</option>
+              <option value="12">+6</option>
+              <option value="13">+7</option>
+              <option value="14">+8</option>
+              <option value="15">+9</option>
+              <option value="16">+10</option>
+            </select>
+          </tr><hr>
+          <tr>
+            <label for="Sabiduria">
+              <strong>
+                <p>SABIDURÍA</p>
+              </strong>
+            </label>
+            <textarea name="Sabiduria" id="SAB" cols="1" rows="1" style="font-size: xx-large" style="border: 1"></textarea>
+            <br><br>
+            <select name="mod_sabiduria" id="mod_sabiduria">
+              <option value="1">-5</option>
+              <option value="2">-4</option>
+              <option value="3">-3</option>
+              <option value="4">-2</option>
+              <option value="5">-1</option>
+              <option value="6" selected>+0</option>
+              <option value="7">+1</option>
+              <option value="8">+2</option>
+              <option value="9">+3</option>
+              <option value="10">+4</option>
+              <option value="11">+5</option>
+              <option value="12">+6</option>
+              <option value="13">+7</option>
+              <option value="14">+8</option>
+              <option value="15">+9</option>
+              <option value="16">+10</option>
+            </select>
+          </tr><hr>
+          <tr>
+            <label for="Carisma">
+              <strong>
+                <p>CARISMA</p>
+              </strong>
+            </label>
+            <textarea name="Carisma" id="CAR" cols="1" rows="1" style="font-size: xx-large" style="border: 1"></textarea>
+            <br><br>
+            <select name="mod_carisma" id="mod_carisma">
+              <option value="1">-5</option>
+              <option value="2">-4</option>
+              <option value="3">-3</option>
+              <option value="4">-2</option>
+              <option value="5">-1</option>
+              <option value="6" selected>+0</option>
+              <option value="7">+1</option>
+              <option value="8">+2</option>
+              <option value="9">+3</option>
+              <option value="10">+4</option>
+              <option value="11">+5</option>
+              <option value="12">+6</option>
+              <option value="13">+7</option>
+              <option value="14">+8</option>
+              <option value="15">+9</option>
+              <option value="16">+10</option>
+            </select>
+          </tr>
+          <br><br>
+        </table>
+      </form>
+    </div>
+    
+      <section class="izquierda">
+        <div class="columna1">
+          <input type="checkbox" id="inspiración">
+            <label for="Inspiración">Inspiración</label>
+            <hr>
+            <select name="Bonocompetencia" id="Bonocompetencia">
+              <option value="1">+1</option>
+              <option value="2">+2</option>
+              <option value="3">+3</option>
+              <option value="4">+4</option>
+              <option value="5">+5</option>
+              <option value="6">+6</option>
+            </select>
+            <label for="Bonocompetencia" style="font-weight: 600;">Bonificador de competencia</label>
+            <br>
+        </div>
+        <div class="columna1">
+          <strong>Tiradas de salvación</strong><br><br>
+              <input type="radio">
+              <textarea name="salva.fue" id="salva.fue" cols="1" rows="1"></textarea>
+              <label for="salv.fuerza">Fuerza</label><br>
+              <input type="radio">
+              <textarea name="salva.des" id="salva.des" cols="1" rows="1"></textarea>
+              <label for="salv.destreza">Destreza</label><br>
+              <input type="radio">
+              <textarea name="salva.con" id="salva.con" cols="1" rows="1"></textarea>
+              <label for="salv.constitución">Constitución</label><br>
+              <input type="radio">
+              <textarea name="salva.int" id="salva.int" cols="1" rows="1"></textarea>
+              <label for="salv.inteligencia">Inteligencia</label><br>
+              <input type="radio">
+              <textarea name="salva.sab" id="salva.sab" cols="1" rows="1"></textarea>
+              <label for="salv.sabiduria">Sabiduría</label><br>
+              <input type="radio">
+              <textarea name="salva.car" id="salva.car" cols="1" rows="1"></textarea>
+              <label for="salv.carisma">Carisma</label><br><br>
+             
+          </div>
+          <div class="columna1">
+              <label for="Habilidades">Habilidades</label><br>
+              <br/>
+              <input type="radio">
+              <textarea name="Acrobacias" id="Acrobacias" cols="1" rows="1"></textarea>
+              <label for="Acrobacias">Acrobacias (Des)</label>
+              <br/>
+              <input type="radio">
+              <textarea name="Arcanos" id="Arcanos" cols="1" rows="1"></textarea>
+              <label for="Arcanos">Arcanos (Int)</label>
+              <br/>
+              <input type="radio">
+              <textarea name="Atletismo" id="Atletismo" cols="1" rows="1"></textarea>
+              <label for="Atletismo">Atletismo (Fue)</label>
+              <br/>
+              <input type="radio">
+              <textarea name="Engaño" id="Engaño" cols="1" rows="1"></textarea>
+              <label for="Engaño">Engaño (Car)</label>
+              <br/>
+              <input type="radio">
+              <textarea name="Historia" id="Historia" cols="1" rows="1"></textarea>
+              <label for="Historia">Historia (Int)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Interpretación" id="Interpretación" cols="1" rows="1"></textarea>
+              <label for="Interpretación">Interpretación (Car)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Intimidación" id="Intimidación" cols="1" rows="1"></textarea>
+              <label for="Intimidación">Intimidación (Car)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Investigación" id="Investigación" cols="1" rows="1"></textarea>
+              <label for="Investigación">Investigación (Int)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Juego de manos" id="Juego de manos" cols="1" rows="1"></textarea>
+              <label for="Juego de manos">Juego de manos (Des)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Medicina" id="Medicina" cols="1" rows="1"></textarea>
+              <label for="Medicina">Medicina (Sab)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Naturaleza" id="Naturaleza" cols="1" rows="1"></textarea>
+              <label for="Naturaleza">Naturaleza (Int)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Percepción" id="Percepción" cols="1" rows="1"></textarea>
+              <label for="Percepción">Percepción (Sab)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Perspicacia" id="Perspicacia" cols="1" rows="1"></textarea>
+              <label for="Perspicacia">Perspicacia (Sab)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Persuasión" id="Persuasión" cols="1" rows="1"></textarea>
+              <label for="Perspicacia">Perspicacia (Sab)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Religión" id="Religión" cols="1" rows="1"></textarea>
+              <label for="Religión">Religión (Int)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Sigilo" id="Sigilo" cols="1" rows="1"></textarea>
+              <label for="Sigilo">Sigilo (Des)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Supervivencia" id="Supervivencia" cols="1" rows="1"></textarea>
+              <label for="Supervivencia">Supervivencia (Sab)</label>
+              <br>
+              <input type="radio">
+              <textarea name="Trato con animales" id="tratoanimales" cols="1" rows="1"></textarea>
+              <label for="Trato con animales">Trato con animales (Sab)</label>
+            <br><br>
+        </div>
+        
+        <div class="sab_pasiva">
+          <textarea name="sabiduría pasiva" id="sabiduría pasiva" cols="1" rows="1" style="font-size: x-large;"></textarea>
+          <label for="sabiduría pasiva"><strong>Sabiduría pasiva (percepción)</strong></label>
+        </div>
+        
+        <div class="idiomas">
+          <label for="idiomas"><strong>Otras competencias e idiomas:</strong></label><br><br>
+          <textarea name="idiomas" id="idiomas" cols="30" rows="19"></textarea>
+        </div>
+        
+      </section>    
+      <section class="centro">
+        <div class="columna2">
+          <div class="fila1">
+            <div class="caja1">
+              <label for="clase_armadura">Clase de armadura</label>
+              <textarea name="clase_armadura" id="CA" cols="5" rows="2" style="font-size: xx-large"></textarea>
+            </div>
+            <div class="caja1">
+              <label for="iniciativa">Iniciativa</label>
+              <textarea name="iniciativa" id="iniciativa" cols="5" rows="2" style="font-size: xx-large"></textarea>
+            </div>
+            <div class="caja1">
+              <label for="velocidad">Velocidad</label>
+              <textarea name="velocidad" id="velocidad" cols="5" rows="2" style="font-size: xx-large"></textarea>
+            </div>
+          </div>  
+            
+          <div class="fila2" style="border: 1px solid rgb(0, 0, 0);">
+            <br>
+            <label for="p_golpe_max"><strong>Puntos de golpe máximos:</strong></label>
+            <input type="text">
+            <br><br>
+            <textarea name="p_golpe_actual" id="p_golpe_actual" cols="30" rows="5"></textarea><br>
+            <label for="p_golpe_actual"><strong>Puntos de golpe actuales:</strong></label><br><br>
+          </div>
+          <div class="fila2">
+            <br>
+            <label for="p_golpe_temp"><strong>Puntos de golpe temporales</strong></label><br>
+            <textarea name="p_golpe_temp" id="p_golpe_temp" cols="30" rows="5"></textarea><br><br>
+          </div>
+          <div class="fila3">
+            <div class="caja2">
+              <label for="total"><strong>Total:</strong></label><br>
+              <textarea name="dados_de_golpe" id="dados_de_golpe" cols="10" rows="5"></textarea><br>
+              <label><strong>Dados de golpe</strong></label>
+            </div>
+            <div class="caja2">
+              <label for="salvacion" style="font-size: large;"><strong>Salvaciones</strong></label><br>
+              <label for="muerte" style="font-size: large;"><strong>contra muerte</strong></label><br><br>
+              <label for="exitos"><strong>ÉXITOS:</strong></label>
+              <input type="radio" name="exito1" id="exito1">==
+              <input type="radio" name="exito2" id="exito2">==
+              <input type="radio" name="exito3" id="exito3"><br>
+              <label for="fallos"><strong>FALLOS:</strong></label>
+              <input type="radio" name="fallo1" id="fallo1">==
+              <input type="radio" name="fallo2" id="fallo2">==
+              <input type="radio" name="fallo3" id="fallo2">
+            </div>
+          </div>
+        </div>
+        <div class="ataques">
+          <table class="tabla">
+              <tr>
+                <th>Nombre</th>
+                <th>Bonificador</th>
+                <th>Daño/Tipo</th>
+              </tr>
+              <tr>
+                <td><input type="text" size="15"></td>
+                <td><input type="text" size="15"></td>
+                <td><input type="text" size="15"></td>
+              </tr>
+              <tr>
+                <td><input type="text" size="15"></td>
+                <td><input type="text" size="15"></td>
+                <td><input type="text" size="15"></td>
+              </tr>
+              <tr>
+                <td><input type="text" size="15"></td>
+                <td><input type="text" size="15"></td>
+                <td><input type="text" size="15"></td>
+              </tr>
+          </table>
+          <br>
+          <textarea name="" id="" cols="55" rows="15"></textarea><br>
+          <label><strong>Ataques y lanzamiento de conjuros</strong></label><br><br>
+        </div> 
+        <div class="equipo">
+          <table>
+            <tr>
+              <th>Cobre(pc)</th>
+              <td><input type="text" size="1"></td>
+            </tr>
+            <tr>
+              <th>Plata(pp)</th>
+              <th><input type="text" size="1"></th>
+            </tr>
+            <tr>
+              <th>Electro(pe)</th>
+              <th><input type="text" size="1"></th>
+            </tr>
+            <tr>
+              <th>Oro(po)</th>
+              <th><input type="text" size="1"></th>
+            </tr>
+            <tr>
+              <th>Platino(ppt)</th>
+              <th><input type="text" size="1"></th>
+            </tr>
+          </table>
+          <hr>
+          <label for="equipo"><strong>Equipo:</strong></label>
+          <textarea name="equipo" id="equipo" cols="30" rows="14"></textarea><br>
+        </div>  
+      </section>
+      <section class="derecha">
+          <div class="columna3">
+              <br>                
+              <label for="personalidad" style="border: 1px solid;">Rasgos de personalidad</label><br>
+              <textarea name="personalidad" id="personalidad" cols="5" rows="5" style="font-size: large;"></textarea>
+              <br>
+              <label for="ideales" style="border: 1px solid;"><strong>ideales</strong></label><br>
+              <textarea name="ideales" id="ideales" cols="5" rows="5" style="font-size: large;"></textarea>
+              <br>
+              <label for="vinculos" style="border: 1px solid;">Vínculos</label><br>
+              <textarea name="vinculos" id="vinculos" cols="5" rows="5" style="font-size: large;"></textarea>
+              <br>
+              <label for="defectos" style="border: 1px solid;">Defectos</label><br>
+              <textarea name="defectos" id="defectos" cols="5" rows="5" style="font-size: large;"></textarea>
+              <hr>
+              <label for="Rasgos" style="border: 1px solid;">Rasgos y atributos</label><br>
+              <textarea name="rasgos" id="rasgos" cols="5" rows="26" style="font-size: large;"></textarea>
+              <br>
+          </div>
+      </section>
+    </section>
+    <footer> 
+    </footer>
+  </body>
+</html>

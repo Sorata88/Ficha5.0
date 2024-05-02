@@ -1,0 +1,151 @@
+*{
+    padding: 0%;
+}
+header{
+    width: 100%;
+    background-color: rgb(225, 228, 217);
+    box-shadow: 0 0 10px rgb(0, 128, 0, 50%) inset;
+    border-style:groove;
+    text-align: center;
+
+}
+nav{
+    width: 100%;
+    background: linear-gradient(rgb(235, 221, 201), rgb(247, 206, 156));
+    border-style: double;
+    padding: 3px;
+}
+.principal{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.Características{
+    height: 807px;
+    background-color: rgb(224, 245, 248);
+    box-shadow: 0 0 20px rgb(92, 235, 235) inset;
+    border-style: groove;
+    text-align: center;
+}
+.cuerpo{
+    width: 100%;
+    border-style: groove;
+    display: grid;
+    grid-template-columns: 0.41fr 0.85fr 1.37fr 1.37fr;
+    gap: 3px;
+}
+.izquierda{
+    background-color: rgb(233, 230, 216);
+    height: 1230px;
+}
+.columna1{
+    border-style: groove;
+    background: linear-gradient(lightgray, rgb(174, 174, 174));
+    font-size: large;
+    font-weight: bold;
+    padding: 13px;
+}
+.sab_pasiva{
+    border-style:groove; 
+    font-size: large;
+    background: linear-gradient(azure, rgb(147, 191, 228));
+    text-align: center;
+    padding: 10px;
+}
+.idiomas{
+    border-style:groove; 
+    font-size: large;
+    background-color: papayawhip;
+    box-shadow: 0 0 10px 20px peachpuff inset;
+    text-align: center;
+    padding: 10px;
+
+}
+.centro{
+    background: linear-gradient(rgb(235, 253, 253), rgb(136, 157, 208));
+    height: 1230px;
+}
+
+.fila1{
+    border-style: groove;
+    background-color: rgb(241, 225, 178);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding: 3px;
+
+}
+.caja1{
+    padding-top: 5px;
+    font-weight: bold;
+    border: 1px solid;
+    background-color: rgb(231, 196, 196);
+    box-shadow: 0 0 10px 0 crimson inset;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding-bottom: 15px;
+    height: 100px;
+}
+.fila2{
+    border-style: groove;
+    text-align: center;
+}
+.fila3{
+    border-style: groove;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    padding: 10px;
+}
+.caja2{
+    padding-top: 5px;
+    text-align: center;
+    border-style: groove;
+    height: 130px;
+    background-color: rgb(239, 230, 248);
+    background: linear-gradient(45deg, rgb(209, 170, 209), rgb(236, 236, 245));
+}
+.tabla{
+    display: flex;
+    justify-content: center;
+
+
+}
+.ataques{
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    border-style: groove;
+    padding: 10px;
+    background-color: rgb(243, 232, 219);
+    box-shadow: 0 0 10px 20px peachpuff inset;
+}
+.equipo{
+    border-style: groove;
+    display: flex;
+    flex-flow: row wrap;
+    background: linear-gradient(rgb(194, 194, 194), lightgray);
+}
+.derecha{
+    background-color: rgb(218, 235, 224);
+    box-shadow: 0 0 10px 10px rgb(94, 133, 94, 50%) inset;
+    height: 1230px;
+
+}
+.columna3{
+    border-style: groove;
+    height: 1215px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    justify-content: initial;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 14px;
+}
