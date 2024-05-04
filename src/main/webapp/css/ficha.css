@@ -1,5 +1,12 @@
 *{
     padding: 0%;
+    
+textarea{
+    resize: none;
+}
+body{
+    background-image: url(/img/paper-texture-73sblskk73kbwu05.jpg);
+}
 }
 header{
     width: 100%;
@@ -13,7 +20,7 @@ nav{
     width: 100%;
     background: linear-gradient(rgb(235, 221, 201), rgb(247, 206, 156));
     border-style: double;
-    padding: 3px;
+    padding: 1px;
 }
 .principal{
     list-style: none;
@@ -22,7 +29,7 @@ nav{
 }
 
 .Características{
-    height: 807px;
+    height: max-content;
     background-color: rgb(224, 245, 248);
     box-shadow: 0 0 20px rgb(92, 235, 235) inset;
     border-style: groove;
@@ -30,14 +37,13 @@ nav{
 }
 .cuerpo{
     width: 100%;
-    border-style: groove;
     display: grid;
     grid-template-columns: 0.41fr 0.85fr 1.37fr 1.37fr;
     gap: 3px;
 }
 .izquierda{
     background-color: rgb(233, 230, 216);
-    height: 1230px;
+    height: 1227px;
 }
 .columna1{
     border-style: groove;
@@ -64,7 +70,7 @@ nav{
 }
 .centro{
     background: linear-gradient(rgb(235, 253, 253), rgb(136, 157, 208));
-    height: 1230px;
+    height: 1227px;
 }
 
 .fila1{
@@ -133,7 +139,7 @@ nav{
 .derecha{
     background-color: rgb(218, 235, 224);
     box-shadow: 0 0 10px 10px rgb(94, 133, 94, 50%) inset;
-    height: 1230px;
+    height: 1227px;
 
 }
 .columna3{
