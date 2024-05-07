@@ -21,9 +21,10 @@ function calcularFuerza() {
     } else if (fuerza.value == 18 || fuerza.value == 19){
         modFuerza.value = 4;
     }      
-};
+}
   
 fuerza.addEventListener('change', calcularFuerza);
+
 
 const salvaFuerza = document.getElementById('salva.fue');
 const atletismo = document.getElementById('Atletismo');

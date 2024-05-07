@@ -27,13 +27,13 @@
             <th>Clase</th>
             <th>Nivel</th>
           </tr>
-          
+
           <tr>
             <td>
-                <label for="nombrepersonaje"></label><input type="text" name="nombrepersonaje" id="nombrepersonaje" required>
+                <label for="nombrejugador"></label><input type="text" name="nombrejugador" id="nombrejugador" required>
             </td>
             <td>
-                <label for="nombrejugador"></label><input type="text" name="nombrejugador" id="nombrejugador" required>
+                <label for="nombrepersonaje"></label><input type="text" name="nombrepersonaje" id="nombrepersonaje" required>
             </td>
             <td>
                 <label for="trasfondo"></label><input type="text" name="trasfondo" id="trasfondo">
@@ -41,6 +41,7 @@
             <td>
               <label for="clase"></label>
               <select name="clase" id="clase" required>
+                  <option value="0" disabled selected></option>
                 <option value="1">Bárbaro</option>
                 <option value="2">Bardo</option>
                 <option value="3">Brujo</option>
@@ -53,10 +54,9 @@
                 <option value="10">Monje</option>
                 <option value="11">Paladín</option>
                 <option value="12">Pícaro</option>
-                <option value="0" disabled selected></option>
-              </select>  
+              </select>
             </td>
-            
+
             <td>
               <label for="nivel"></label>
               <select name="nivel" id="nivel">
@@ -91,6 +91,8 @@
             <th>Subraza</th>
             <th></th>
             <th><input type="submit"></th>
+            <th><button >descargar</button></th>
+            <th><a href="http://127.0.0.1:5500/ficha.html" download="mi_ficha.pdf">descarga</a></th>
           </tr>
           <tr>
             <td>
@@ -102,6 +104,7 @@
             <td>
               <label for="raza"></label>
               <select name="raza" id="raza" required>
+                  <option value="0" disabled selected></option>
                 <option value="1">Enano</option>
                 <option value="2">Elfo</option>
                 <option value="3">Mediano</option>
@@ -111,12 +114,12 @@
                 <option value="7">Semielfo</option>
                 <option value="8">Semiorco</option>
                 <option value="9">Tiefling</option>
-                <option value="0" disabled selected></option>
-              </select>  
+              </select>
             </td>
             <td>
               <label for="subraza"></label>
               <select name="subraza" id="subraza">
+                  <option value="0" disabled selected></option>
                 <option value="1">Enano de las colinas</option>
                 <option value="2">Enano de las montañas</option>
                 <option value="3">Alto elfo</option>
@@ -126,13 +129,12 @@
                 <option value="7">Fornido</option>
                 <option value="8">Gnomo de los bosques</option>
                 <option value="9">Gnomo de las rocas</option>
-                <option value="0" disabled selected></option>
-              </select>  
+              </select>
             </td>
           </tr>
         </table>
       </nav>
-      <section class="cuerpo">
+       <section class="cuerpo">
         <div class="Características">
           <table>
             <tr>
@@ -156,9 +158,9 @@
                 <option value="17">17</option>
                 <option value="18">18</option>
                 <option value="19">19</option>
-              </select>  
+              </select>
               <br><br>
-              <input type="number" disabled id="mod_fuerza" style="width: 25%; font-size: x-large;">
+                <textarea name="mod_fuerza" id="mod_fuerza" cols="1" rows="1" style="font-size: large"></textarea>
             </tr><br><br><hr>
             <tr>
               <p><strong>DESTREZA</strong></p>
@@ -181,9 +183,9 @@
                 <option value="17">17</option>
                 <option value="18">18</option>
                 <option value="19">19</option>
-              </select>  
+              </select>
               <br><br>
-              <input type="number" disabled id="mod_destreza" style="width: 25%; font-size: x-large;">
+              <input type="number" disabled name="mod_destreza" id="mod_destreza" style="width: 25%; font-size: x-large;">
             </tr>
           <br><br><hr>
           <tr>
@@ -207,9 +209,9 @@
               <option value="17">17</option>
               <option value="18">18</option>
               <option value="19">19</option>
-            </select>  
+            </select>
             <br><br>
-            <input type="number" disabled id="mod_constitucion" style="width: 25%; font-size: x-large;">
+            <input type="number" disabled name="mod_constitucion" id="mod_constitucion" style="width: 25%; font-size: x-large;">
           </tr><br><br><hr>
           <tr>
             <p><strong>INTELIGENCIA</strong></p>
@@ -232,9 +234,9 @@
               <option value="17">17</option>
               <option value="18">18</option>
               <option value="19">19</option>
-            </select>  
+            </select>
             <br><br>
-            <input type="number" disabled id="mod_inteligencia" style="width: 25%; font-size: x-large;">
+            <input type="number" disabled name="mod_inteligencia" id="mod_inteligencia" style="width: 25%; font-size: x-large;">
           </tr><br><br><hr>
           <tr>
             <p><strong>SABIDURÍA</strong></p>
@@ -257,9 +259,9 @@
               <option value="17">17</option>
               <option value="18">18</option>
               <option value="19">19</option>
-            </select>  
+            </select>
             <br><br>
-            <input type="number" disabled id="mod_sabiduria" style="width: 25%; font-size: x-large;">
+            <input type="number" disabled name="mod_sabiduria" id="mod_sabiduria" style="width: 25%; font-size: x-large;">
           </tr><br><br><hr>
           <tr>
             <p><strong>CARISMA</strong></p>
@@ -282,14 +284,14 @@
               <option value="17">17</option>
               <option value="18">18</option>
               <option value="19">19</option>
-            </select>  
+            </select>
             <br><br>
-            <input type="number" disabled id="mod_carisma" style="width: 25%; font-size: x-large;">
+            <input type="number" disabled name="mod_carisma" id="mod_carisma" style="width: 25%; font-size: x-large;">
           </tr>
           <br><br>
         </table>
       </div>
-    
+
       <section class="izquierda">
         <div class="columna1">
             <label for="inspiración"></label><input type="checkbox" id="inspiración">
@@ -331,7 +333,7 @@
             </label>
             <label for="salva.car"></label><textarea name="salva.car" id="salva.car" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label>Carisma</label><br><br>
-             
+
           </div>
           <div class="columna1">
               <label>Habilidades</label><br>
@@ -442,21 +444,21 @@
                 <input type="checkbox" id="checkbox_hab18">
               </label>
               <label for="tratoanimales"></label><textarea name="Trato con animales" id="tratoanimales" cols="1" rows="1" style="font-size: large;" disabled></textarea>
-              <label for="Trato con animales">Trato con animales (Sab)</label>
+              <label for="tratoanimales">Trato con animales (Sab)</label>
             <br><br>
         </div>
-        
+
         <div class="sab_pasiva">
           <textarea name="sab.pasiva" id="sab.pasiva" cols="1" rows="1" disabled></textarea>
-          <label for="sabiduría pasiva"><strong>Sabiduría pasiva (percepción)</strong></label>
+          <label for="sab.pasiva"><strong>Sabiduría pasiva (percepción)</strong></label>
         </div>
-        
+
         <div class="idiomas">
           <label for="idiomas"><strong>Otras competencias e idiomas:</strong></label><br><br>
           <textarea name="idiomas" id="idiomas" cols="30" rows="13"></textarea>
         </div>
-        
-      </section>    
+
+      </section>
       <section class="centro">
         <div class="columna2">
           <div class="fila1">
@@ -473,8 +475,8 @@
               <label for="velocidad">Velocidad</label>
               <input type="number" name="velocidad" id="velocidad" style="font-size: xxx-large; width: 65%;">
             </div>
-          </div>  
-            
+          </div>
+
           <div class="fila2" style="border: 1px solid rgb(0, 0, 0);">
             <br>
             <label><strong>Puntos de golpe máximos:</strong></label>
@@ -554,14 +556,12 @@
           <br>
             <label for=""></label><textarea name="" id="" cols="55" rows="15"></textarea><br>
           <label><strong>Ataques y lanzamiento de conjuros</strong></label><br><br>
-        </div> 
+        </div>
         <div class="equipo">
           <table>
             <tr>
               <th>Cobre(pc)</th>
-              <th><label>
-                <input type="number" style="width: 25%;">
-              </label></td>
+              <th><label><input type="number" style="width: 25%;"></label></th>
             </tr>
             <tr>
               <th>Plata(pp)</th>
@@ -591,11 +591,11 @@
           <hr>
           <label for="equipo"><strong>Equipo:</strong></label>
           <textarea name="equipo" id="equipo" cols="33" rows="7" style="font-size: large;"></textarea><br>
-        </div>  
+        </div>
       </section>
       <section class="derecha">
           <div class="columna3">
-              <br>                
+              <br>
               <label for="personalidad" style="border: 1px solid;">Rasgos de personalidad</label><br>
               <textarea name="personalidad" id="personalidad" cols="5" rows="5" style="font-size: large;"></textarea>
               <br>
