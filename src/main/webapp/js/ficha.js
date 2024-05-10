@@ -20,7 +20,7 @@ function nivel_competencia(){
 nivel.addEventListener('change', nivel_competencia);
 
 function ficha_editar(idficha, op){
-    fetch('Listar_todo?idficha='+idficha+'&op='+op)
+    fetch('Gestion_ficha?idficha='+idficha+'&op='+op)
         .then(res => res.json())
         .then(data => mostrarForm(data));
 }

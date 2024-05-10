@@ -1,5 +1,5 @@
 function llamada(){
-    /*fetch('Listar_todo?op=1')
+    /*fetch('Gestion_ficha?op=1')
     .then(res => res.json())
     .then (data => pintar(data))*/
     let resultados;
@@ -16,7 +16,7 @@ function llamada(){
         }
 
     };
-    xhr.open("GET", "Listar_todo?op=1", false);
+    xhr.open("GET", "Gestion_ficha?op=1", false);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send();
     pintar(resultados);
@@ -48,7 +48,7 @@ function pintar(ficha){
 
 function borrarFicha(idficha) {
     alert("¿Estás seguro de que deseas eliminar esta ficha? (esta acción será irreversible)");
-    fetch('Listar_todo?idficha='+idficha+'&op=3')
+    fetch('Gestion_ficha?idficha='+idficha+'&op=3')
     .then(res => res.json())
     .then (data => pintar(data))
 }

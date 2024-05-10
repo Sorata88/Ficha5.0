@@ -13,8 +13,8 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 
 
-@WebServlet(name = "Listar_todo", value = "/Listar_todo")
-public class Listar_todo extends HttpServlet {
+@WebServlet(name = "Gestion_ficha", value = "/Gestion_ficha")
+public class Gestion_ficha extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
