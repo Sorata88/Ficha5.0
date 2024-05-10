@@ -22,11 +22,9 @@ public class Listar_todo extends HttpServlet {
 
         int opcion = Integer.parseInt(request.getParameter("op"));
 
-
         if (opcion == 1) {
-            String recogerJSON = null;
             try {
-                recogerJSON = DAOficha.getInstance().listarJSON();
+                String recogerJSON = DAOficha.getInstance().listarJSON();
                 out.print(recogerJSON);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
@@ -37,26 +35,20 @@ public class Listar_todo extends HttpServlet {
             try {
                 n.obtenerID(id);
                 out.print(n.dameJSON());
-                System.out.println(n.toString());
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
-
+        } else if (opcion == 3) {
+            int id = Integer.parseInt(request.getParameter("idficha"));
+            Ficha n = new Ficha();
+            try {
+                n.borrarFicha(id);
+                String recogerJSON = DAOficha.getInstance().listarJSON();
+                out.print(recogerJSON);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
-
-        /*try {
-            String recogerJSON = DAOficha.getInstance().listarJSON();
-            System.out.println(recogerJSON);
-
-            PrintWriter out = response.getWriter();
-            out.print(recogerJSON);
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }*/
-
-
     }
 
     @Override

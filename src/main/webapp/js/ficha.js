@@ -25,13 +25,8 @@ function ficha_editar(idficha, op){
         .then(data => mostrarForm(data));
 }
 
-/*fetch('Listar_todo?id='+id+'&op='+op)
-    .then(res => res.json())
-    .then (data => mostrarForm(data))*/
-
-
 function mostrarForm(datos){
-    /*document.getElementById('idficha').value = datos.idficha;*/
+    document.getElementById('idficha').value = datos.idficha;
     document.getElementById("nombrejugador").value = datos.nombre;
     document.getElementById("nombrepersonaje").value = datos.nombrepj;
     document.getElementById("raza").value = datos.idraza;

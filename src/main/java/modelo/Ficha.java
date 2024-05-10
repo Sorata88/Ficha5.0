@@ -215,6 +215,14 @@ public class Ficha {
         DAOficha.getInstance().crear_ficha(this);
     }
 
+    public void actualizarFicha() throws SQLException {
+        DAOficha.getInstance().actualizarFicha(this);
+    }
+
+    public void borrarFicha(int id) throws SQLException {
+        DAOficha.getInstance().borrarFicha(id);
+    }
+
     public void obtenerID(int id) throws SQLException {
         Ficha aux = DAOficha.getInstance().obtenerID(id);
 
@@ -237,8 +245,5 @@ public class Ficha {
         return json;
     }
 
-    public void actualizarFicha() throws SQLException {
-        DAOficha.getInstance().actualizarFicha(this);
 
-    }
 }

@@ -48,7 +48,6 @@ public class Crear_ficha extends HttpServlet {
         n.setCaract(4, Integer.parseInt(request.getParameter("INT")), Integer.parseInt(request.getParameter("mod_inteligencia")));
         n.setCaract(5, Integer.parseInt(request.getParameter("SAB")), Integer.parseInt(request.getParameter("mod_sabiduria")));
         n.setCaract(6, Integer.parseInt(request.getParameter("CAR")), Integer.parseInt(request.getParameter("mod_carisma")));*/
-        System.out.println(n.toString());
 
         try {
             if (id == ""){

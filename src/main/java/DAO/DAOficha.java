@@ -137,8 +137,20 @@ public class DAOficha {
             ps.setInt(10, n.getIdficha());
             ps.executeUpdate();
             ps.close();
-
         }
+    }
+
+    public void borrarFicha(int idficha) throws SQLException {
+        String query = "DELETE FROM caracteristica_ficha WHERE idficha=?";
+        PreparedStatement ps = conn.prepareStatement(query);
+        ps.setInt(1, idficha);
+        ps.executeUpdate();
+        String query2 = "DELETE FROM ficha WHERE idficha=?";
+        PreparedStatement ps2 = conn.prepareStatement(query2);
+        ps2.setInt(1, idficha);
+        ps2.executeUpdate();
+        ps.close();
+        ps2.close();
     }
 
 
