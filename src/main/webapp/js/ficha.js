@@ -31,7 +31,7 @@ function ficha_editar(idficha, op){
 
 
 function mostrarForm(datos){
-    document.getElementById('idficha').value = datos.idficha;
+    /*document.getElementById('idficha').value = datos.idficha;*/
     document.getElementById("nombrejugador").value = datos.nombre;
     document.getElementById("nombrepersonaje").value = datos.nombrepj;
     document.getElementById("raza").value = datos.idraza;

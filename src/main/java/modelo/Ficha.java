@@ -236,4 +236,9 @@ public class Ficha {
         json = gson.toJson(this);
         return json;
     }
+
+    public void actualizarFicha() throws SQLException {
+        DAOficha.getInstance().actualizarFicha(this);
+
+    }
 }

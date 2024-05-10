@@ -26,7 +26,10 @@
     text-align: center;
     font-size: xx-large;
     border-style: groove;
-    background: linear-gradient(rgb(159, 125, 83), rgb(226, 189, 141));
+    background: rgb(196, 158, 111);
+}
+.boton:hover{
+    background-color: rgb(226, 189, 141);
 }
 @keyframes fuego{
     0%{

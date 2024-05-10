@@ -22,7 +22,7 @@ public class Crear_ficha extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int idficha = Integer.parseInt(request.getParameter("idficha"));
+        String id = request.getParameter("idficha");
         String nombre = request.getParameter("nombrejugador");
         String nombrepj = request.getParameter("nombrepersonaje");
         int idraza = Integer.parseInt(request.getParameter("raza"));
@@ -33,7 +33,7 @@ public class Crear_ficha extends HttpServlet {
         int px = Integer.parseInt(request.getParameter("px"));
         int bono = 3;/*Integer.parseInt(request.getParameter("bono_competencia"));*/
 
-        Ficha n = new Ficha(idficha, nombre, nombrepj, idraza, idclase, nivel, trasfondo, alineamiento, px, bono);
+        Ficha n = new Ficha(nombre, nombrepj, idraza, idclase, nivel, trasfondo, alineamiento, px, bono);
 
         n.setCaract(1,18,4);
         n.setCaract(2,15,2);
@@ -51,12 +51,13 @@ public class Crear_ficha extends HttpServlet {
         System.out.println(n.toString());
 
         try {
-            if (idficha == 0){
+            if (id == ""){
                 n.crear_ficha();
             } else {
-                //crear método actualizar ficha
+                int idficha = Integer.parseInt(id);
+                n.setIdficha(idficha);
+                n.actualizarFicha();
             }
-
 
             response.sendRedirect("listar.html");
         } catch (SQLException e) {

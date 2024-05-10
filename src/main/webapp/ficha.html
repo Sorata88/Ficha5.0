@@ -14,7 +14,7 @@
     <title>Hoja de personaje</title>
   </head>
 
-  <body>
+  <body style="background-image: url(Image/pergamino.jpg)">
     <img src="Image/dnd2.jpg" alt="cabecera" width="100%">
     <header><strong>HOJA DE PERSONAJE</strong></header>
     <form name="ficha" action="Crear_ficha" method="post">
@@ -56,6 +56,7 @@
                 <option value="12">Pícaro</option>
               </select>
             </td>
+
             <td>
               <label for="nivel"></label>
               <select name="nivel" id="nivel">
@@ -90,6 +91,7 @@
             <th>Raza</th>
             <th>Subraza</th>
             <th></th>
+
           </tr>
           <tr>
             <td>
@@ -158,7 +160,7 @@
                 <option value="19">19</option>
               </select>
               <br><br>
-                <input type="number" name="mod_fuerza" id="mod_fuerza" readonly style="width: 25%; font-size: x-large;">
+                <textarea name="mod_fuerza" id="mod_fuerza" cols="1" rows="1" style="font-size: large"></textarea>
             </tr><br><br><hr>
             <tr>
               <p><strong>DESTREZA</strong></p>
@@ -183,7 +185,7 @@
                 <option value="19">19</option>
               </select>
               <br><br>
-              <input type="number" name="mod_destreza" id="mod_destreza" readonly style="width: 25%; font-size: x-large;">
+              <input type="number" disabled name="mod_destreza" id="mod_destreza" style="width: 25%; font-size: x-large;">
             </tr>
           <br><br><hr>
           <tr>
@@ -209,7 +211,7 @@
               <option value="19">19</option>
             </select>
             <br><br>
-            <input type="number" name="mod_constitucion" id="mod_constitucion" readonly style="width: 25%; font-size: x-large;">
+            <input type="number" disabled name="mod_constitucion" id="mod_constitucion" style="width: 25%; font-size: x-large;">
           </tr><br><br><hr>
           <tr>
             <p><strong>INTELIGENCIA</strong></p>
@@ -234,7 +236,7 @@
               <option value="19">19</option>
             </select>
             <br><br>
-            <input type="number" name="mod_inteligencia" id="mod_inteligencia" readonly style="width: 25%; font-size: x-large;">
+            <input type="number" disabled name="mod_inteligencia" id="mod_inteligencia" style="width: 25%; font-size: x-large;">
           </tr><br><br><hr>
           <tr>
             <p><strong>SABIDURÍA</strong></p>
@@ -259,7 +261,7 @@
               <option value="19">19</option>
             </select>
             <br><br>
-            <input type="number" name="mod_sabiduria" id="mod_sabiduria" readonly style="width: 25%; font-size: x-large;">
+            <input type="number" disabled name="mod_sabiduria" id="mod_sabiduria" style="width: 25%; font-size: x-large;">
           </tr><br><br><hr>
           <tr>
             <p><strong>CARISMA</strong></p>
@@ -284,7 +286,7 @@
               <option value="19">19</option>
             </select>
             <br><br>
-            <input type="number" name="mod_carisma" id="mod_carisma" readonly style="width: 25%; font-size: x-large;">
+            <input type="number" disabled name="mod_carisma" id="mod_carisma" style="width: 25%; font-size: x-large;">
           </tr>
           <br><br>
         </table>
@@ -295,7 +297,7 @@
             <label for="inspiración"></label><input type="checkbox" id="inspiración">
             <label for="Inspiración">Inspiración</label>
             <hr>
-            <textarea name="bono_competencia" id="bono_competencia" readonly cols="1" rows="1" style="font-size: large;"></textarea>
+            <textarea name="bono_competencia" id="bono_competencia" cols="1" rows="1" style="font-size: large;" disabled></textarea>
             <label for="bono_competencia" style="font-weight: 600;">Bonificador de competencia</label>
             <br>
         </div>
@@ -304,32 +306,32 @@
             <label>
                 <input type="checkbox" id="checkbox_fue">
             </label>
-            <label for="salva.fue"></label><textarea name="salva.fue" id="salva.fue" readonly cols="1" rows="1" style="font-size: large;"></textarea>
+            <label for="salva.fue"></label><textarea name="salva.fue" id="salva.fue" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label>Fuerza</label><br>
             <label>
               <input type="checkbox" id="checkbox_des">
             </label>
-            <label for="salva.des"></label><textarea name="salva.des" id="salva.des" readonly cols="1" rows="1" style="font-size: large;"></textarea>
+            <label for="salva.des"></label><textarea name="salva.des" id="salva.des" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label>Destreza</label><br>
             <label>
               <input type="checkbox" id="checkbox_con">
             </label>
-            <label for="salva.con"></label><textarea name="salva.con" id="salva.con" readonly cols="1" rows="1" style="font-size: large;"></textarea>
+            <label for="salva.con"></label><textarea name="salva.con" id="salva.con" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label>Constitución</label><br>
             <label>
               <input type="checkbox" id="checkbox_int">
             </label>
-            <label for="salva.int"></label><textarea name="salva.int" id="salva.int" readonly cols="1" rows="1" style="font-size: large;"></textarea>
+            <label for="salva.int"></label><textarea name="salva.int" id="salva.int" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label>Inteligencia</label><br>
             <label>
               <input type="checkbox" id="checkbox_sab">
             </label>
-            <label for="salva.sab"></label><textarea name="salva.sab" id="salva.sab" readonly cols="1" rows="1" style="font-size: large;"></textarea>
+            <label for="salva.sab"></label><textarea name="salva.sab" id="salva.sab" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label>Sabiduría</label><br>
             <label>
               <input type="checkbox" id="checkbox_car">
             </label>
-            <label for="salva.car"></label><textarea name="salva.car" id="salva.car" readonly cols="1" rows="1" style="font-size: large;"></textarea>
+            <label for="salva.car"></label><textarea name="salva.car" id="salva.car" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label>Carisma</label><br><br>
 
           </div>
@@ -339,115 +341,115 @@
               <label>
                 <input type="checkbox" id="checkbox_hab1">
               </label>
-              <textarea name="Acrobacias" id="Acrobacias" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Acrobacias" id="Acrobacias" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Acrobacias">Acrobacias (Des)</label>
               <br/>
               <label>
                 <input type="checkbox" id="checkbox_hab2">
               </label>
-              <textarea name="Arcanos" id="Arcanos" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Arcanos" id="Arcanos" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Arcanos">Arcanos (Int)</label>
               <br/>
               <label>
                 <input type="checkbox" id="checkbox_hab3">
               </label>
-              <textarea name="Atletismo" id="Atletismo" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Atletismo" id="Atletismo" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Atletismo">Atletismo (Fue)</label>
               <br/>
               <label>
                 <input type="checkbox" id="checkbox_hab4">
               </label>
-              <textarea name="Engaño" id="Engaño" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Engaño" id="Engaño" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Engaño">Engaño (Car)</label>
               <br/>
               <label>
                 <input type="checkbox" id="checkbox_hab5">
               </label>
-              <textarea name="Historia" id="Historia" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Historia" id="Historia" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Historia">Historia (Int)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab6">
               </label>
-              <textarea name="Interpretación" id="Interpretación" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Interpretación" id="Interpretación" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Interpretación">Interpretación (Car)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab7">
               </label>
-              <textarea name="Intimidación" id="Intimidación" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Intimidación" id="Intimidación" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Intimidación">Intimidación (Car)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab8">
               </label>
-              <textarea name="Investigación" id="Investigación" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Investigación" id="Investigación" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Investigación">Investigación (Int)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab9">
               </label>
-              <textarea name="Juego de manos" id="Juego de manos" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Juego de manos" id="Juego de manos" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Juego de manos">Juego de manos (Des)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab10">
               </label>
-              <textarea name="Medicina" id="Medicina" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Medicina" id="Medicina" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Medicina">Medicina (Sab)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab11">
               </label>
-              <textarea name="Naturaleza" id="Naturaleza" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Naturaleza" id="Naturaleza" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Naturaleza">Naturaleza (Int)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab12">
               </label>
-              <textarea name="Percepción" id="Percepción" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Percepción" id="Percepción" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Percepción">Percepción (Sab)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab13">
               </label>
-              <textarea name="Perspicacia" id="Perspicacia" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Perspicacia" id="Perspicacia" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Perspicacia">Perspicacia (Sab)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab14">
               </label>
-              <label for="Persuasión"></label><textarea name="Persuasión" id="Persuasión" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <label for="Persuasión"></label><textarea name="Persuasión" id="Persuasión" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Persuasión">Persuasión (Car)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab15">
               </label>
-              <textarea name="Religión" id="Religión" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Religión" id="Religión" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Religión">Religión (Int)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab16">
               </label>
-              <textarea name="Sigilo" id="Sigilo" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Sigilo" id="Sigilo" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Sigilo">Sigilo (Des)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab17">
               </label>
-              <textarea name="Supervivencia" id="Supervivencia" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <textarea name="Supervivencia" id="Supervivencia" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="Supervivencia">Supervivencia (Sab)</label>
               <br>
               <label>
                 <input type="checkbox" id="checkbox_hab18">
               </label>
-              <label for="tratoanimales"></label><textarea name="Trato con animales" id="tratoanimales" cols="1" rows="1" style="font-size: large;" readonly></textarea>
+              <label for="tratoanimales"></label><textarea name="Trato con animales" id="tratoanimales" cols="1" rows="1" style="font-size: large;" disabled></textarea>
               <label for="tratoanimales">Trato con animales (Sab)</label>
             <br><br>
         </div>
 
         <div class="sab_pasiva">
-          <textarea name="sab.pasiva" id="sab.pasiva" cols="1" rows="1" readonly></textarea>
+          <textarea name="sab.pasiva" id="sab.pasiva" cols="1" rows="1" disabled></textarea>
           <label for="sab.pasiva"><strong>Sabiduría pasiva (percepción)</strong></label>
         </div>
 
@@ -471,7 +473,7 @@
             </div>
             <div class="caja1">
               <label for="velocidad">Velocidad</label>
-              <input type="number" name="velocidad" id="velocidad" readonly style="font-size: xxx-large; width: 65%;">
+              <input type="number" name="velocidad" id="velocidad" style="font-size: xxx-large; width: 65%;">
             </div>
           </div>
 

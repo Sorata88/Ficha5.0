@@ -120,5 +120,28 @@ public class DAOficha {
         return n;
     }
 
+    public void actualizarFicha(Ficha n) throws SQLException{
+
+        String query = "UPDATE ficha SET nombre=?, nombrepj=?, idraza=?, idclase=?, nivel=?, trasfondo=?, alineamiento=?, px=?, bono_competencia=? WHERE idficha=?";
+        try (PreparedStatement ps = conn.prepareStatement(query)) {
+
+            ps.setString(1, n.getNombre());
+            ps.setString(2, n.getNombrepj());
+            ps.setInt(3, n.getIdraza());
+            ps.setInt(4, n.getIdclase());
+            ps.setInt(5, n.getNivel());
+            ps.setString(6, n.getTrasfondo());
+            ps.setString(7, n.getAlineamiento());
+            ps.setInt(8, n.getPx());
+            ps.setInt(9, n.getBono_competencia());
+            ps.setInt(10, n.getIdficha());
+            ps.executeUpdate();
+            ps.close();
+
+        }
+    }
+
+
+
 
 }
