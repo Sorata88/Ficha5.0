@@ -22,7 +22,7 @@ public class Crear_ficha extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        int idficha = Integer.parseInt(request.getParameter("idficha"));
         String nombre = request.getParameter("nombrejugador");
         String nombrepj = request.getParameter("nombrepersonaje");
         int idraza = Integer.parseInt(request.getParameter("raza"));
@@ -31,18 +31,16 @@ public class Crear_ficha extends HttpServlet {
         String trasfondo = request.getParameter("trasfondo");
         String alineamiento = request.getParameter("alineamiento");
         int px = Integer.parseInt(request.getParameter("px"));
+        int bono = 3;/*Integer.parseInt(request.getParameter("bono_competencia"));*/
 
-        Ficha n = new Ficha(nombre, nombrepj, idraza, idclase, nivel, trasfondo, alineamiento, px);
+        Ficha n = new Ficha(idficha, nombre, nombrepj, idraza, idclase, nivel, trasfondo, alineamiento, px, bono);
 
-        //n.setCaract(1,18,4);
+        n.setCaract(1,18,4);
         n.setCaract(2,15,2);
         n.setCaract(3, 10,0);
         n.setCaract(4,15,2);
         n.setCaract(5,12,1);
         n.setCaract(6,16,3);
-
-        int punt_fuerza = Integer.parseInt(request.getParameter("FUE"));
-        int mod_fuerza = Integer.parseInt(request.getParameter("mod_fuerza"));
 
         /*n.setCaract(1, Integer.parseInt(request.getParameter("FUE")), Integer.parseInt(request.getParameter("mod_fuerza")));
         n.setCaract(2, Integer.parseInt(request.getParameter("DES")), Integer.parseInt(request.getParameter("mod_destreza")));
@@ -53,9 +51,14 @@ public class Crear_ficha extends HttpServlet {
         System.out.println(n.toString());
 
         try {
-            n.crear_ficha();
+            if (idficha == 0){
+                n.crear_ficha();
+            } else {
+                //crear método actualizar ficha
+            }
 
-            response.sendRedirect("index.html");
+
+            response.sendRedirect("listar.html");
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Error creando ficha");

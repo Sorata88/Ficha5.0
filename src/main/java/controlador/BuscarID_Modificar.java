@@ -9,8 +9,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "Listar_modificar", value = "/Listar_modificar")
-public class Listar_modificar extends HttpServlet {
+@WebServlet(name = "BuscarID_Modificar", value = "/BuscarID_Modificar")
+public class BuscarID_Modificar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

@@ -2,11 +2,14 @@ package DAO;
 
 import modelo.Ficha;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.google.gson.Gson;
+
 
 public class DAOficha {
 
@@ -26,9 +29,9 @@ public class DAOficha {
     }
 
     public void insertarCaract( int idFicha, int idCaract, int punt, int mod){
-        String query2 = "INSERT INTO caracteristica_ficha (idficha, idcaract, puntuacion, modificador) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO caracteristica_ficha (idficha, idcaract, puntuacion, modificador) VALUES (?, ?, ?, ?)";
 
-        try (PreparedStatement ps = conn.prepareStatement(query2)) {
+        try (PreparedStatement ps = conn.prepareStatement(query)) {
             ps.setInt(1, idFicha);
             ps.setInt(2, idCaract);
             ps.setInt(3, punt);
@@ -44,7 +47,7 @@ public class DAOficha {
 
     public void crear_ficha(Ficha n) throws SQLException{
 
-        String query = "INSERT INTO ficha (idficha, nombre, nombrepj, idraza, idclase, nivel, trasfondo, alineamiento, px) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO ficha (idficha, nombre, nombrepj, idraza, idclase, nivel, trasfondo, alineamiento, px, bono_competencia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement ps = conn.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
@@ -57,6 +60,7 @@ public class DAOficha {
             ps.setString(7, n.getTrasfondo());
             ps.setString(8, n.getAlineamiento());
             ps.setInt(9, n.getPx());
+            ps.setInt(10, n.getBono_competencia());
 
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
@@ -77,44 +81,43 @@ public class DAOficha {
         insertarCaract(n.getIdficha(), n.getSAB().getIdCaract(), n.getSAB().getPuntuacion(), n.getSAB().getModificador());
 
         insertarCaract(n.getIdficha(), n.getCAR().getIdCaract(), n.getCAR().getPuntuacion(), n.getCAR().getModificador());
+    }
 
+    public ArrayList<Ficha> listar_ficha() throws SQLException{
 
-        /*String query2 = "INSERT INTO caracteristica_ficha (idficha, idcaract, puntuacion, modificador) VALUES (?, ?, ?, ?)";
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM ficha");
+        ResultSet rs = ps.executeQuery();
 
-        try (PreparedStatement ps = conn.prepareStatement(query2)) {
+        ArrayList<Ficha> lista_ficha = null;
+        while(rs.next()) {
+            if(lista_ficha == null) {
+                lista_ficha = new ArrayList<>();
+            }
+            lista_ficha.add(new Ficha(rs.getInt(1), rs.getString(2), rs.getString(3),
+                    rs.getInt(4), rs.getInt(5), rs.getInt(6), rs.getString(7),
+                    rs.getString(8), rs.getInt(9), rs.getInt(10)));
+        }
+        return lista_ficha;
+    }
 
-            ps.setInt(1, n.getIdficha());
-            ps.setInt(2, n.getFUE().getIdCaract());
-            ps.setInt(3, n.getFUE().getPuntuacion());
-            ps.setInt(4, n.getFUE().getModificador());
-            ps.setInt(1, 10);
-            ps.setInt(2, n.getDES().getIdCaract());
-            ps.setInt(3, n.getDES().getPuntuacion());
-            ps.setInt(4, n.getDES().getModificador());
-            ps.setInt(1, 10);
-            ps.setInt(2, n.getCON().getIdCaract());
-            ps.setInt(3, n.getCON().getPuntuacion());
-            ps.setInt(4, n.getCON().getModificador());
-            ps.setInt(1, 10);
-            ps.setInt(2, n.getINT().getIdCaract());
-            ps.setInt(3, n.getINT().getPuntuacion());
-            ps.setInt(4, n.getINT().getModificador());
-            ps.setInt(1, 10);
-            ps.setInt(2, n.getSAB().getIdCaract());
-            ps.setInt(3, n.getSAB().getPuntuacion());
-            ps.setInt(4, n.getSAB().getModificador());
-            ps.setInt(1, 10);
-            ps.setInt(2, n.getCAR().getIdCaract());
-            ps.setInt(3, n.getCAR().getPuntuacion());
-            ps.setInt(4, n.getCAR().getModificador());
+    public String listarJSON() throws SQLException {
+        String json = "";
+        Gson gson = new Gson();
+        json = gson.toJson(this.listar_ficha());
+        return json;
+    }
 
-            ps.executeUpdate();
+    public Ficha obtenerID(int id) throws SQLException{
+        String query = "SELECT * FROM ficha WHERE idficha = ?";
+        PreparedStatement ps = conn.prepareStatement(query);
+        ps.setInt(1, id);
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        Ficha n = new Ficha(rs.getInt(1), rs.getString(2), rs.getString(3),
+                rs.getInt(4), rs.getInt(5), rs.getInt(6), rs.getString(7),
+                rs.getString(8), rs.getInt(9), rs.getInt(10));
 
-            ps.close();
-
-
-        }*/
-
+        return n;
     }
 
 

@@ -1,6 +1,7 @@
 package modelo;
 
 import DAO.DAOficha;
+import com.google.gson.Gson;
 
 import java.sql.SQLException;
 import java.util.Arrays;
@@ -16,9 +17,13 @@ public class Ficha {
     private String trasfondo;
     private String alineamiento;
     private int px;
+    private int bono_competencia;
     private Caracteristica Caract[] = new Caracteristica[6];
 
-public Ficha(int idficha, String nombre, String nombrepj, int idraza, int idclase, int nivel, String trasfondo, String alineamiento, int px) {
+    public Ficha() {
+    }
+
+    public Ficha(int idficha, String nombre, String nombrepj, int idraza, int idclase, int nivel, String trasfondo, String alineamiento, int px, int bono_competencia) {
         this.idficha = idficha;
         this.nombre = nombre;
         this.nombrepj = nombrepj;
@@ -28,10 +33,11 @@ public Ficha(int idficha, String nombre, String nombrepj, int idraza, int idclas
         this.trasfondo = trasfondo;
         this.alineamiento = alineamiento;
         this.px = px;
+        this.bono_competencia = bono_competencia;
         inicializar();
     }
 
-    public Ficha(String nombre, String nombrepj, int idraza, int idclase, int nivel, String trasfondo, String alineamiento, int px) {
+    public Ficha(String nombre, String nombrepj, int idraza, int idclase, int nivel, String trasfondo, String alineamiento, int px, int bono_competencia) {
         this.nombre = nombre;
         this.nombrepj = nombrepj;
         this.idraza = idraza;
@@ -40,6 +46,7 @@ public Ficha(int idficha, String nombre, String nombrepj, int idraza, int idclas
         this.trasfondo = trasfondo;
         this.alineamiento = alineamiento;
         this.px = px;
+        this.bono_competencia = bono_competencia;
         inicializar();
 
     }
@@ -171,31 +178,62 @@ public Ficha(int idficha, String nombre, String nombrepj, int idraza, int idclas
         this.px = px;
     }
 
-    public Caracteristica[] getC() {
+    public int getBono_competencia() {
+        return bono_competencia;
+    }
+
+    public void setBono_competencia(int bono_competencia) {
+        this.bono_competencia = bono_competencia;
+    }
+
+    public Caracteristica[] getCaract() {
         return Caract;
     }
 
-    public void setC(Caracteristica[] c) {
+    public void setCaract(Caracteristica[] c) {
         Caract = c;
     }
 
     @Override
     public String toString() {
         return "Ficha{" +
-                "idficha=" + idficha +
-                ", nombre='" + nombre + '\'' +
-                ", nombrepj='" + nombrepj + '\'' +
-                ", idraza=" + idraza +
-                ", idclase=" + idclase +
-                ", nivel=" + nivel +
-                ", trasfondo='" + trasfondo + '\'' +
-                ", alineamiento='" + alineamiento + '\'' +
-                ", px=" + px +
-                ", C=" + Arrays.toString(Caract) +
+                "idficha:" + idficha +
+                ", nombre:'" + nombre + '\'' +
+                ", nombrepj:'" + nombrepj + '\'' +
+                ", idraza:" + idraza +
+                ", idclase:" + idclase +
+                ", nivel:" + nivel +
+                ", trasfondo:'" + trasfondo + '\'' +
+                ", alineamiento:'" + alineamiento + '\'' +
+                ", px:" + px +
+                ", bono_competencia:" + bono_competencia +
+                ", Caracteristicas=:" + Arrays.toString(Caract) +
                 '}';
     }
 
     public void crear_ficha() throws SQLException {
         DAOficha.getInstance().crear_ficha(this);
+    }
+
+    public void obtenerID(int id) throws SQLException {
+        Ficha aux = DAOficha.getInstance().obtenerID(id);
+
+        this.setIdficha(aux.getIdficha());
+        this.setNombre(aux.getNombre());
+        this.setNombrepj(aux.getNombrepj());
+        this.setIdraza(aux.getIdraza());
+        this.setIdclase(aux.getIdclase());
+        this.setNivel(aux.getNivel());
+        this.setTrasfondo(aux.getTrasfondo());
+        this.setAlineamiento(aux.getAlineamiento());
+        this.setPx(aux.getPx());
+        this.setBono_competencia(aux.getBono_competencia());
+    }
+
+    public String dameJSON() throws SQLException {
+        String json = "";
+        Gson gson = new Gson();
+        json = gson.toJson(this);
+        return json;
     }
 }
