@@ -1,0 +1,60 @@
+.titulo{
+    font-family: fantasy;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: xxx-large;
+    text-align: center;
+    padding-top: 20px;
+    background: linear-gradient(darkred, red);
+    justify-content: center;
+    height: 150px;
+    border-style: groove;
+}
+.barra{
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.2fr 1fr 1fr;
+
+}
+.boton{
+    font-family: fantasy;
+    height: 70px;
+    display: flex;
+    padding-top: 18px;
+    flex-direction: column;
+    text-align: center;
+    font-size: xx-large;
+    border-style: groove;
+    background: rgb(196, 158, 111);
+}
+.boton:hover{
+    background-color: rgb(226, 189, 141);
+}
+@keyframes fuego{
+    0%{
+        background-color: darkred;
+    }
+    20%{
+        background-color: firebrick;
+    }
+    40%{
+        background-color: red;
+    }
+    60%{
+        background-color: orangered;
+    }
+    80%{
+        background-color: orange;
+    }
+    100%{
+        background-color: darkorange;
+    }
+}
+.logo_fuego{
+    height: 93px;
+    display: flex;
+    overflow: hidden;
+    padding-top: 1px;
+    padding-right: 10px;
+    animation: fuego 1s linear infinite alternate;
+
+}

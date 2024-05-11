@@ -31,8 +31,8 @@ function pintar(ficha){
             "<tr><td hidden>"+ficha[i].idficha+
             "</td><td>"+ficha[i].nombre+
             "</td><td>"+ficha[i].nombrepj+
-            "</td><td>"+ficha[i].idraza+
-            "</td><td>"+ficha[i].idclase +
+            "</td><td>"+ficha[i].raza+
+            "</td><td>"+ficha[i].clase +
             "</td><td>"+ficha[i].nivel +
             "</td><td>"+ficha[i].trasfondo+
             "</td><td>"+ficha[i].alineamiento+
@@ -40,6 +40,7 @@ function pintar(ficha){
             "</td><td>+"+ficha[i].bono_competencia+
             "</td><td><a href='ficha.html?idficha="+ficha[i].idficha+"&op=2'>Editar</a>"+
             "</td><td><a href='javascript:borrarFicha("+ficha[i].idficha+")'>Borrar</a>"+
+            //"</td><td><button type="button" id="boton">Borrar</button>"+
             "</td></tr>";
     }
     html += "</table>";
@@ -53,7 +54,7 @@ function borrarFicha(idficha) {
     .then (data => pintar(data))
 }
 
-/*let borrar = document.getElementById('borrar');
+/*let borrar = document.getElementById('boton');
 borrar.addEventListener('click', borrarFicha);
 */
 window.onload = function(){

@@ -25,15 +25,15 @@ public class Crear_ficha extends HttpServlet {
         String id = request.getParameter("idficha");
         String nombre = request.getParameter("nombrejugador");
         String nombrepj = request.getParameter("nombrepersonaje");
-        int idraza = Integer.parseInt(request.getParameter("raza"));
-        int idclase =Integer.parseInt(request.getParameter("clase"));
+        String raza = request.getParameter("raza");
+        String clase = request.getParameter("clase");
         int nivel = Integer.parseInt(request.getParameter("nivel"));
         String trasfondo = request.getParameter("trasfondo");
         String alineamiento = request.getParameter("alineamiento");
         int px = Integer.parseInt(request.getParameter("px"));
-        int bono = 3;/*Integer.parseInt(request.getParameter("bono_competencia"));*/
+        int bono = 3; //Integer.parseInt(request.getParameter("bono_competencia"));
 
-        Ficha n = new Ficha(nombre, nombrepj, idraza, idclase, nivel, trasfondo, alineamiento, px, bono);
+        Ficha n = new Ficha(nombre, nombrepj, raza, clase, nivel, trasfondo, alineamiento, px, bono);
 
         n.setCaract(1,18,4);
         n.setCaract(2,15,2);

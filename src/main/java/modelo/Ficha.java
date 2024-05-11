@@ -11,8 +11,8 @@ public class Ficha {
     private int idficha;
     private String nombre;
     private String nombrepj;
-    private int idraza;
-    private int idclase;
+    private String raza;
+    private String clase;
     private int nivel;
     private String trasfondo;
     private String alineamiento;
@@ -23,12 +23,12 @@ public class Ficha {
     public Ficha() {
     }
 
-    public Ficha(int idficha, String nombre, String nombrepj, int idraza, int idclase, int nivel, String trasfondo, String alineamiento, int px, int bono_competencia) {
+    public Ficha(int idficha, String nombre, String nombrepj, String raza, String clase, int nivel, String trasfondo, String alineamiento, int px, int bono_competencia) {
         this.idficha = idficha;
         this.nombre = nombre;
         this.nombrepj = nombrepj;
-        this.idraza = idraza;
-        this.idclase = idclase;
+        this.raza = raza;
+        this.clase = clase;
         this.nivel = nivel;
         this.trasfondo = trasfondo;
         this.alineamiento = alineamiento;
@@ -37,11 +37,11 @@ public class Ficha {
         inicializar();
     }
 
-    public Ficha(String nombre, String nombrepj, int idraza, int idclase, int nivel, String trasfondo, String alineamiento, int px, int bono_competencia) {
+    public Ficha(String nombre, String nombrepj, String raza, String clase, int nivel, String trasfondo, String alineamiento, int px, int bono_competencia) {
         this.nombre = nombre;
         this.nombrepj = nombrepj;
-        this.idraza = idraza;
-        this.idclase = idclase;
+        this.raza = raza;
+        this.clase = clase;
         this.nivel = nivel;
         this.trasfondo = trasfondo;
         this.alineamiento = alineamiento;
@@ -130,20 +130,20 @@ public class Ficha {
         this.nombrepj = nombrepj;
     }
 
-    public int getIdraza() {
-        return idraza;
+    public String getRaza() {
+        return raza;
     }
 
-    public void setIdraza(int idraza) {
-        this.idraza = idraza;
+    public void setRaza(String raza) {
+        this.raza = raza;
     }
 
-    public int getIdclase() {
-        return idclase;
+    public String getClase() {
+        return clase;
     }
 
-    public void setIdclase(int idclase) {
-        this.idclase = idclase;
+    public void setClase(String clase) {
+        this.clase = clase;
     }
 
     public int getNivel() {
@@ -200,8 +200,8 @@ public class Ficha {
                 "idficha:" + idficha +
                 ", nombre:'" + nombre + '\'' +
                 ", nombrepj:'" + nombrepj + '\'' +
-                ", idraza:" + idraza +
-                ", idclase:" + idclase +
+                ", raza:" + raza +
+                ", clase:" + clase +
                 ", nivel:" + nivel +
                 ", trasfondo:'" + trasfondo + '\'' +
                 ", alineamiento:'" + alineamiento + '\'' +
@@ -229,8 +229,8 @@ public class Ficha {
         this.setIdficha(aux.getIdficha());
         this.setNombre(aux.getNombre());
         this.setNombrepj(aux.getNombrepj());
-        this.setIdraza(aux.getIdraza());
-        this.setIdclase(aux.getIdclase());
+        this.setRaza(aux.getRaza());
+        this.setClase(aux.getClase());
         this.setNivel(aux.getNivel());
         this.setTrasfondo(aux.getTrasfondo());
         this.setAlineamiento(aux.getAlineamiento());
