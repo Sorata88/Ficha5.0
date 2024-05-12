@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/ficha.css">
     <link rel="stylesheet" href="css/header.css">
-    <script src="js/ficha.js" defer></script>
+    <script src="js/crear_ficha.js" defer></script>
+    <script src="js/editar_ficha.js" defer></script>
     <script src="js/fuerza.js" defer></script>
     <script src="js/destreza.js" defer></script>
     <script src="js/constitucion.js" defer></script>
@@ -42,15 +43,16 @@
       </div>
     </header>
     <section class="header"><strong>HOJA DE PERSONAJE</strong></section>
-    <form name="ficha" id="form_ficha" action="Gestion_ficha" method="post">
+    <form name="formulario" id="form_ficha" action="Gestion_ficha" method="post">
       <nav>
         <table class="principal">
           <tr>
-            <th>Nombre del jugador</th>
-            <th>Nombre del personaje</th>
+            <th>Nombre del jugador*</th>
+            <th>Nombre del personaje*</th>
             <th>Trasfondo</th>
             <th>Clase</th>
-            <th>Nivel</th>
+            <th>Nivel*</th>
+            <th>* = <em>Campos obligatorios</em></th>
           </tr>
           <tr>
             <td>
@@ -82,7 +84,7 @@
             </td>
             <td>
               <label for="nivel"></label>
-              <select name="nivel" id="nivel">
+              <select name="nivel" id="nivel" required>
                 <option value="" selected disabled></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -159,7 +161,7 @@
         <div class="Características">
           <table>
             <tr>
-              <p><strong>FUERZA</strong></p>
+              <p><strong>FUERZA*</strong></p><br>
               <select name="FUE" id="FUE" class="modificador" style="font-size: x-large;">
                 <option value="" selected disabled></option>
                 <option value="3">3</option>
@@ -184,7 +186,7 @@
                 <input type="number" readonly name="mod_fuerza" id="mod_fuerza" style="width: 25%; font-size: x-large;">
             </tr><br><br><hr><br>
             <tr>
-              <p><strong>DESTREZA</strong></p>
+              <p><strong>DESTREZA*</strong></p><br>
               <select name="DES" id="DES" class="modificador" style="font-size: x-large;">
                 <option value="" selected disabled></option>
                 <option value="3">3</option>
@@ -210,7 +212,7 @@
             </tr>
           <br><br><hr><br>
           <tr>
-            <p><strong>CONSTITUCIÓN</strong></p>
+            <p><strong>CONSTITUCIÓN*</strong></p><br>
             <select name="CON" id="CON" class="modificador" style="font-size: x-large;">
               <option value="" selected disabled></option>
               <option value="3">3</option>
@@ -235,7 +237,7 @@
             <input type="number" readonly name="mod_constitucion" id="mod_constitucion" style="width: 25%; font-size: x-large;">
           </tr><br><br><hr><br>
           <tr>
-            <p><strong>INTELIGENCIA</strong></p>
+            <p><strong>INTELIGENCIA*</strong></p><br>
             <select name="INT" id="INT" class="modificador" style="font-size: x-large;">
               <option value="" selected disabled></option>
               <option value="3">3</option>
@@ -260,7 +262,7 @@
             <input type="number" readonly name="mod_inteligencia" id="mod_inteligencia" style="width: 25%; font-size: x-large;">
           </tr><br><br><hr><br>
           <tr>
-            <p><strong>SABIDURÍA</strong></p>
+            <p><strong>SABIDURÍA*</strong></p><br>
             <select name="SAB" id="SAB" class="modificador" style="font-size: x-large;">
               <option value="" selected disabled></option>
               <option value="3">3</option>
@@ -285,7 +287,7 @@
             <input type="number" readonly name="mod_sabiduria" id="mod_sabiduria" style="width: 25%; font-size: x-large;">
           </tr><br><br><hr><br>
           <tr>
-            <p><strong>CARISMA</strong></p>
+            <p><strong>CARISMA*</strong></p><br>
             <select name="CAR" id="CAR" class="modificador" style="font-size: x-large;">
               <option value="" selected disabled></option>
               <option value="3">3</option>

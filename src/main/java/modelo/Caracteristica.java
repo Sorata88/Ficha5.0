@@ -25,7 +25,7 @@ public class Caracteristica {
     public String getNombre() {
         return nombre;
     }
-    private void setNombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -33,7 +33,7 @@ public class Caracteristica {
         return idCaract;
     }
 
-    private void setIdCaract(int idCaract) {
+    public void setIdCaract(int idCaract) {
         this.idCaract = idCaract;
     }
 

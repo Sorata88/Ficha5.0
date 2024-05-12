@@ -19,6 +19,12 @@ public class Ficha {
     private int px;
     private int bono_competencia;
     private Caracteristica Caract[] = new Caracteristica[6];
+    /*private Caracteristica Fuerza;
+    private Caracteristica Destreza;
+    private Caracteristica Constitucion;
+    private Caracteristica Inteligencia;
+    private Caracteristica Sabiduria;
+    private Caracteristica Carisma;*/
 
     public Ficha() {
     }
@@ -65,8 +71,8 @@ public class Ficha {
         int i = 0;
         do {
             if (Caract[i].getIdCaract() == id) {
-                Caract[i].setPuntuacion(punt);
-                Caract[i].setModificador(mod);
+                    Caract[i].setPuntuacion(punt);
+                    Caract[i].setModificador(mod);
             }
             i++;
         } while (Caract[i-1].getIdCaract() != id);
@@ -236,6 +242,7 @@ public class Ficha {
         this.setAlineamiento(aux.getAlineamiento());
         this.setPx(aux.getPx());
         this.setBono_competencia(aux.getBono_competencia());
+        this.setCaract(aux.getCaract());
     }
 
     public String dameJSON() throws SQLException {

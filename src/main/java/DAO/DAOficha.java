@@ -38,11 +38,28 @@ public class DAOficha {
             ps.setInt(4, mod);
 
             ps.executeUpdate();
-
             ps.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void actualizarCaract( int idFicha, int idCaract, int punt, int mod){
+        String query = "UPDATE caracteristica_ficha SET puntuacion=?, modificador=? WHERE idficha=? and idcaract=?";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setInt(1, punt);
+            ps.setInt(2, mod);
+            ps.setInt(3, idFicha);
+            ps.setInt(4, idCaract);
+
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     public void crear_ficha(Ficha n) throws SQLException{
@@ -117,6 +134,13 @@ public class DAOficha {
                 rs.getString(4), rs.getString(5), rs.getInt(6), rs.getString(7),
                 rs.getString(8), rs.getInt(9), rs.getInt(10));
 
+        String query2 = "SELECT * FROM caracteristica_ficha WHERE idficha = ?";
+        PreparedStatement ps2 = conn.prepareStatement(query2);
+        ps2.setInt(1, id);
+        ResultSet rs2 = ps2.executeQuery();
+        while(rs2.next()){
+            n.setCaract(rs2.getInt(2),rs2.getInt(3),rs2.getInt(4));
+        }
         return n;
     }
 
@@ -135,9 +159,21 @@ public class DAOficha {
             ps.setInt(8, n.getPx());
             ps.setInt(9, n.getBono_competencia());
             ps.setInt(10, n.getIdficha());
+
             ps.executeUpdate();
             ps.close();
         }
+        actualizarCaract(n.getIdficha(), n.getFUE().getIdCaract(), n.getFUE().getPuntuacion(), n.getFUE().getModificador());
+
+        actualizarCaract(n.getIdficha(), n.getDES().getIdCaract(), n.getDES().getPuntuacion(), n.getDES().getModificador());
+
+        actualizarCaract(n.getIdficha(), n.getCON().getIdCaract(), n.getCON().getPuntuacion(), n.getCON().getModificador());
+
+        actualizarCaract(n.getIdficha(), n.getINT().getIdCaract(), n.getINT().getPuntuacion(), n.getINT().getModificador());
+
+        actualizarCaract(n.getIdficha(), n.getSAB().getIdCaract(), n.getSAB().getPuntuacion(), n.getSAB().getModificador());
+
+        actualizarCaract(n.getIdficha(), n.getCAR().getIdCaract(), n.getCAR().getPuntuacion(), n.getCAR().getModificador());
     }
 
     public void borrarFicha(int idficha) throws SQLException {
