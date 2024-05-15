@@ -1,33 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
 
-    const nivel = document.getElementById('nivel');
-    const bonoCompetencia = document.getElementById('bono_competencia');
+
+
+
+    var level = document.getElementById('nivel');
+    var bonoCompetencia = document.getElementById('bono_competencia');
 
     function nivel_competencia(){
-        if (nivel.value == 1 || nivel.value == 2 || nivel.value == 3 || nivel.value == 4){
+        if (level.value == 1 || level.value == 2 || level.value == 3 || level.value == 4){
             bonoCompetencia.value = 2;
-        } else if (nivel.value == 5 || nivel.value == 6 || nivel.value == 7 || nivel.value == 8){
+        } else if (level.value == 5 || level.value == 6 || level.value == 7 || level.value == 8){
             bonoCompetencia.value = 3;
-        } else if (nivel.value == 9 || nivel.value == 10 || nivel.value == 11 || nivel.value == 12){
+        } else if (level.value == 9 || level.value == 10 || level.value == 11 || level.value == 12){
             bonoCompetencia.value = 4;
-        } else if (nivel.value == 13 || nivel.value == 14 || nivel.value == 15 || nivel.value == 16){
+        } else if (level.value == 13 || level.value == 14 || level.value == 15 || level.value == 16){
             bonoCompetencia.value = 5;
-        } else if (nivel.value == 17 || nivel.value == 18 || nivel.value == 19 || nivel.value == 20){
+        } else if (level.value == 17 || level.value == 18 || level.value == 19 || level.value == 20){
             bonoCompetencia.value = 6;
         }
     }
-    nivel.addEventListener('change', nivel_competencia);
 
-    /*let select_raza = document.getElementById('raza');
-    let select_subraza = document.getElementById('subraza');
-    select_raza.addEventListener('change', ()=>{
-        if(select_raza.value == "Enano"){
-            select_subraza = "Enano de las colinas"
-        } else if (select_raza.value == "Elfo"){
-            select_subraza == "Alto elfo" || select_subraza == "Elfo de los bosques" || select_subraza == "Elfo oscuro (drow)"
-        }
-    });*/
-
+    level.addEventListener('change', nivel_competencia);
 
     let boton_enviar = document.getElementById('boton_enviar');
 
@@ -55,4 +47,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     }
-})

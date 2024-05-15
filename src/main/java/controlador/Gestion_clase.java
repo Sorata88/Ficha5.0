@@ -16,6 +16,7 @@ import java.sql.SQLException;
 public class Gestion_clase extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //Recojo los datos de una tabla en la base de datos que ya está rellena y los pinto en el front.
         PrintWriter out = response.getWriter();
         String clase = request.getParameter("clase");
         Clase c = new Clase();

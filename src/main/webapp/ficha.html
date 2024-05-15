@@ -14,6 +14,7 @@
     <script src="js/sabiduria.js" defer></script>
     <script src="js/carisma.js" defer></script>
     <script src="js/gestion_clase_raza.js" defer></script>
+    <script src="pruebaselect.js" defer></script>
     <title>Hoja de personaje</title>
   </head>
 
@@ -23,7 +24,8 @@
           <div class="logo">
               <img src="Image/DnD-50.webp" alt="logo50" width=40%>
           </div>
-          <label for="titulo1">¡BIENVENIDOS A FICHA 5.0! ¡TU HERRAMIENTA WEB PARA CREAR FICHAS DE PERSONAJE PARA EL JUEGO DE ROL MÁS FAMOSO DE TODOS LOS TIEMPOS!</label>
+          <label for="titulo1">¡BIENVENIDOS A FICHA 5.0! ¡TU HERRAMIENTA WEB PARA CREAR FICHAS DE PERSONAJE
+              PARA EL JUEGO DE ROL MÁS FAMOSO DE TODOS LOS TIEMPOS!</label>
       </div>
       <div class="barra">
           <div class="boton">
@@ -126,32 +128,32 @@
             </td>
             <td align="center">
               <label for="raza"></label>
-              <select name="raza" id="raza" required>
-                <option value="0" disabled selected></option>
-                <option value="Enano">Enano</option>
-                <option value="Elfo">Elfo</option>
-                <option value="Mediano">Mediano</option>
-                <option value="Humano">Humano</option>
-                <option value="Dracónido">Dracónido</option>
-                <option value="Gnomo">Gnomo</option>
-                <option value="Semielfo">Semielfo</option>
-                <option value="Semiorco">Semiorco</option>
-                <option value="Tiefling">Tiefling</option>
+              <select name="raza" id="raza" required onchange="cargarSubrazas();">
+                <option value="" disabled selected></option>
+                  <option value="enano">Enano</option>
+                  <option value="elfo">Elfo</option>
+                  <option value="mediano">Mediano</option>
+                  <option value="humano">Humano</option>
+                  <option value="dracónido">Dracónido</option>
+                  <option value="gnomo">Gnomo</option>
+                  <option value="semielfo">Semielfo</option>
+                  <option value="semiorco">Semiorco</option>
+                  <option value="tiefling">Tiefling</option>
               </select>
             </td>
             <td>
               <label for="subraza"></label>
               <select name="subraza" id="subraza">
                 <option value="0" disabled selected></option>
-                <option value="Enano de las colinas">Enano de las colinas</option>
-                <option value="Enano de las montañas">Enano de las montañas</option>
-                <option value="Alto elfo">Alto elfo</option>
-                <option value="Elfo de los bosques">Elfo de los bosques</option>
-                <option value="Elfo oscuro (drow)">Elfo oscuro (drow)</option>
-                <option value="Piesligeros">Piesligeros</option>
-                <option value="Fornido">Fornido</option>
-                <option value="Gnomo de los bosques">Gnomo de los bosques</option>
-                <option value="Gnomo de las rocas">Gnomo de las rocas</option>
+                  <option value="enano de las colinas" hidden>Enano de las colinas</option>
+                  <option value="enano de las montañas" hidden="until-found">Enano de las montañas</option>
+                  <option value="alto elfo" hidden="hidden">Alto elfo</option>
+                  <option value="elfo de los bosques">Elfo de los bosques</option>
+                  <option value="elfo oscuro (drow)">Elfo oscuro (drow)</option>
+                  <option value="piesligeros">Piesligeros</option>
+                  <option value="fornido">Fornido</option>
+                  <option value="gnomo de los bosques">Gnomo de los bosques</option>
+                  <option value="gnomo de las rocas">Gnomo de las rocas</option>
               </select>
             </td>
             <td><input type="submit" id="boton_enviar" value="Crear ficha"></td>

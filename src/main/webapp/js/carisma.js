@@ -1,6 +1,7 @@
 const carisma = document.getElementById('CAR');
 const modCarisma = document.getElementById('mod_carisma');
 
+
 function calcularCarisma(){
     if (carisma.value == 3){
         modCarisma.value = -4;

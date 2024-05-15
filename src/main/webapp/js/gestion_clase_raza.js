@@ -1,17 +1,24 @@
+window.onload = function() {
+    raza.addEventListener('change', function () {
+        listar_raza(raza.value);
+    })
+
+    clase.addEventListener('change', function () {
+        listar_clase(clase.value);
+
+    });
+
+}
     let raza = document.getElementById('raza');
     let descripcion = document.getElementById('descripcion');
     let descrip_raza = "";
-    let nivel = document.getElementById('nivel');
+    //let level = document.getElementById('nivel');
     let descrip_clase = "";
     let clase = document.getElementById('clase');
     let idiomas = "";
     let arma_armadura = "";
     let bloque_idiomas = document.getElementById("idiomas");
     let dado_de_golpe = "";
-
-    raza.addEventListener('change', function () {
-        listar_raza(raza.value);
-    })
 
     function listar_raza(valor) {
         fetch('Gestion_raza?raza='+valor)
@@ -30,14 +37,14 @@
         descrip_raza += "Tamaño: "+datos.size+". ";
 
         descripcion.value = descrip_clase
-        if(descrip_clase!=""){
+        if(descrip_clase!==""){
             descripcion.value += " "
         }
         descripcion.value += descrip_raza;
 
         idiomas = "Idiomas: "+datos.idiomas+".";
         bloque_idiomas.value = arma_armadura;
-        if(arma_armadura!=""){
+        if(arma_armadura!==""){
             bloque_idiomas.value += " ";
         }
         bloque_idiomas.value += idiomas;
@@ -47,13 +54,6 @@
         document.getElementById("rasgos").value = datos.atributo_racial;
 
     }
-
-    clase.addEventListener('change', function () {
-        listar_clase(clase.value);
-
-    });
-
-
 
     function listar_clase(valor) {
         fetch('Gestion_clase?clase=' + valor)
@@ -66,24 +66,24 @@
         descrip_clase = datos.descripcion;
 
         descripcion.value = descrip_clase
-        if(descrip_clase!=""){
+        if(descrip_clase!==""){
             descripcion.value += " "
         }
         descripcion.value += descrip_raza;
         dado_de_golpe = datos.dado_de_golpe;
 
-        document.getElementById("dados_de_golpe").value = nivel.value + dado_de_golpe;
+        document.getElementById("dados_de_golpe").value = level.value + dado_de_golpe;
 
         arma_armadura = datos.comp_armas_armadura;
         bloque_idiomas.value = arma_armadura;
-        if(arma_armadura!=""){
+        if(arma_armadura!==""){
             bloque_idiomas.value += " ";
         }
         bloque_idiomas.value += idiomas;
 
     }
 
-    nivel.addEventListener('change', ()=>{
-        document.getElementById("dados_de_golpe").value = nivel.value+dado_de_golpe;
+    level.addEventListener('change', ()=>{
+        document.getElementById("dados_de_golpe").value = level.value+dado_de_golpe;
     })
 
