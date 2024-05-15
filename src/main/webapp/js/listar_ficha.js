@@ -39,6 +39,7 @@
                 "</td><td>" + ficha[i].alineamiento +
                 "</td><td>" + ficha[i].px +
                 "</td><td>+" + ficha[i].bono_competencia +
+                "</td><td><a href='ficha_readonly.html?idficha="+ficha[i].idficha+"&op=4'>Ver ficha</a>" +
                 "</td><td><a href='ficha.html?idficha="+ficha[i].idficha+"&op=2'>Editar</a>" +
                 "</td><td><a href='javascript:borrarFicha("+ficha[i].idficha+")'>Borrar</a>" +
                 "</td></tr>";

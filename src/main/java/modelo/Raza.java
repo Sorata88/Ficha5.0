@@ -1,5 +1,10 @@
 package modelo;
 
+import DAO.DAOraza;
+import com.google.gson.Gson;
+
+import java.sql.SQLException;
+
 public class Raza {
 
     private int idraza;
@@ -7,13 +12,14 @@ public class Raza {
     private String mejora_leve;
     private String mejora_moderada;
     private String size;
-    private int velocidad;
+    private String velocidad;
     private String idiomas;
+    private String atributo_racial;
 
     public Raza() {
     }
 
-    public Raza(int idraza, String nombre, String mejora_leve, String mejora_moderada, String size, int velocidad, String idiomas) {
+    public Raza(int idraza, String nombre, String mejora_leve, String mejora_moderada, String size, String velocidad, String idiomas, String atributo_racial) {
         this.idraza = idraza;
         this.nombre = nombre;
         this.mejora_leve = mejora_leve;
@@ -21,15 +27,36 @@ public class Raza {
         this.size = size;
         this.velocidad = velocidad;
         this.idiomas = idiomas;
+        this.atributo_racial = atributo_racial;
     }
 
-    public Raza(String nombre, String mejora_leve, String mejora_moderada, String size, int velocidad, String idiomas) {
+    public Raza(String nombre, String mejora_leve, String mejora_moderada, String size, String velocidad, String idiomas, String atributo_racial) {
         this.nombre = nombre;
         this.mejora_leve = mejora_leve;
         this.mejora_moderada = mejora_moderada;
         this.size = size;
         this.velocidad = velocidad;
         this.idiomas = idiomas;
+        this.atributo_racial = atributo_racial;
+    }
+
+    public void listarRaza(String nombre) throws SQLException {
+        Raza prueba = DAOraza.getInstance().listarRaza(nombre);
+        this.setNombre(prueba.getNombre());
+        this.setMejora_leve(prueba.getMejora_leve());
+        this.setMejora_moderada(prueba.getMejora_moderada());
+        this.setSize(prueba.getSize());
+        this.setVelocidad(prueba.getVelocidad());
+        this.setIdiomas(prueba.getIdiomas());
+        this.setAtributo_racial(prueba.getAtributo_racial());
+
+    }
+
+    public String razaJSON(){
+        String json = "";
+        Gson gson = new Gson();
+        json = gson.toJson(this);
+        return json;
     }
 
     public int getIdraza() {
@@ -72,11 +99,11 @@ public class Raza {
         this.size = size;
     }
 
-    public int getVelocidad() {
+    public String getVelocidad() {
         return velocidad;
     }
 
-    public void setVelocidad(int velocidad) {
+    public void setVelocidad(String velocidad) {
         this.velocidad = velocidad;
     }
 
@@ -88,6 +115,14 @@ public class Raza {
         this.idiomas = idiomas;
     }
 
+    public String getAtributo_racial() {
+        return atributo_racial;
+    }
+
+    public void setAtributo_racial(String atributo_racial) {
+        this.atributo_racial = atributo_racial;
+    }
+
     @Override
     public String toString() {
         return "Raza{" +
@@ -96,8 +131,9 @@ public class Raza {
                 ", mejora_leve='" + mejora_leve + '\'' +
                 ", mejora_moderada='" + mejora_moderada + '\'' +
                 ", size='" + size + '\'' +
-                ", velocidad=" + velocidad +
+                ", velocidad='" + velocidad + '\'' +
                 ", idiomas='" + idiomas + '\'' +
+                ", atributo_racial='" + atributo_racial + '\'' +
                 '}';
     }
 }

@@ -13,6 +13,7 @@
     <script src="js/inteligencia.js" defer></script>
     <script src="js/sabiduria.js" defer></script>
     <script src="js/carisma.js" defer></script>
+    <script src="js/gestion_clase_raza.js" defer></script>
     <title>Hoja de personaje</title>
   </head>
 
@@ -64,7 +65,7 @@
             <td>
                 <label for="trasfondo"></label><input type="text" name="trasfondo" id="trasfondo">
             </td>
-            <td>
+            <td align="center">
               <label for="clase"></label>
               <select name="clase" id="clase" required>
                 <option value="0" disabled selected></option>
@@ -82,7 +83,7 @@
                 <option value="Pícaro">Pícaro</option>
               </select>
             </td>
-            <td>
+            <td align="center">
               <label for="nivel"></label>
               <select name="nivel" id="nivel" required>
                 <option value="" selected disabled></option>
@@ -123,7 +124,7 @@
             <td>
                 <label for="px"></label><input type="text" name="px" id="px" />
             </td>
-            <td>
+            <td align="center">
               <label for="raza"></label>
               <select name="raza" id="raza" required>
                 <option value="0" disabled selected></option>
@@ -496,7 +497,7 @@
             </div>
             <div class="caja1">
               <label for="velocidad">Velocidad</label>
-              <input type="number" name="velocidad" id="velocidad" style="font-size: xxx-large; width: 65%;">
+              <textarea readonly name="velocidad" id="velocidad" style="font-size: xx-large;" cols="9" rows="1"></textarea>
             </div>
           </div>
 
@@ -518,7 +519,7 @@
           <div class="fila3">
             <div class="caja2">
               <label><strong>Total:</strong></label><br>
-                <label for="dados_de_golpe"></label><textarea name="dados_de_golpe" id="dados_de_golpe" cols="5" rows="1" style="font-size: xxx-large;"></textarea><br>
+                <label for="dados_de_golpe"></label><textarea readonly name="dados_de_golpe" id="dados_de_golpe" cols="5" rows="1" style="font-size: xxx-large;"></textarea><br>
               <label><strong>Dados de golpe</strong></label>
             </div>
             <div class="caja2">
@@ -619,8 +620,8 @@
       <section class="derecha">
           <div class="columna3">
               <br>
-              <label for="personalidad" style="border: 1px solid;">Rasgos de personalidad</label><br>
-              <textarea name="personalidad" id="personalidad" cols="5" rows="5" style="font-size: large;"></textarea>
+              <label for="descripcion" style="border: 1px solid;">Descripción</label><br>
+              <textarea name="descripcion" id="descripcion" cols="5" rows="5" style="font-size: large;"></textarea>
               <br>
               <label for="ideales" style="border: 1px solid;"><strong>ideales</strong></label><br>
               <textarea name="ideales" id="ideales" cols="5" rows="5" style="font-size: large;"></textarea>
@@ -630,7 +631,7 @@
               <br>
               <label for="defectos" style="border: 1px solid;">Defectos</label><br>
               <textarea name="defectos" id="defectos" cols="5" rows="5" style="font-size: large;"></textarea>
-              <hr>
+              <br>
               <label for="Rasgos" style="border: 1px solid;">Rasgos y atributos</label><br>
               <label for="rasgos"></label><textarea name="rasgos" id="rasgos" cols="5" rows="26" style="font-size: large;"></textarea>
               <br>

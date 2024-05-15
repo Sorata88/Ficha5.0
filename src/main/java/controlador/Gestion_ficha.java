@@ -49,6 +49,15 @@ public class Gestion_ficha extends HttpServlet {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+        } else if(opcion == 4) {
+            int id = Integer.parseInt(request.getParameter("idficha"));
+            Ficha n = new Ficha();
+            try {
+                n.obtenerID(id);
+                out.print(n.dameJSON());
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 

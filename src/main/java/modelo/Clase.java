@@ -1,5 +1,10 @@
 package modelo;
 
+import DAO.DAOclase;
+import com.google.gson.Gson;
+
+import java.sql.SQLException;
+
 public class Clase {
 
     private int idclase;
@@ -75,5 +80,21 @@ public class Clase {
                 ", dado_de_golpe='" + dado_de_golpe + '\'' +
                 ", comp_armas_armadura='" + comp_armas_armadura + '\'' +
                 '}';
+    }
+
+    public void listarClase(String nombre) throws SQLException {
+        Clase prueba = DAOclase.getInstance().listarClase(nombre);
+        this.setIdclase(prueba.getIdclase());
+        this.setNombre(prueba.getNombre());
+        this.setDescripcion(prueba.getDescripcion());
+        this.setDado_de_golpe(prueba.getDado_de_golpe());
+        this.setComp_armas_armadura(prueba.getComp_armas_armadura());
+    }
+
+    public String claseJSON(){
+        String json = "";
+        Gson gson = new Gson();
+        json = gson.toJson(this);
+        return json;
     }
 }

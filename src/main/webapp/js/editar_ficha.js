@@ -1,9 +1,33 @@
-document.addEventListener('DOMContentLoaded', function(){
-
+window.onload = function() {
     var urlParams = new URLSearchParams(window.location.search);
     const idficha = urlParams.get('idficha');
     const op = urlParams.get('op');
     ficha_editar(idficha, op);
+
+    /*let clase = document.getElementById('clase');
+    clase.addEventListener('change', function (){
+        listar_clase(clase.value);
+    });
+
+
+    let nivel = document.getElementById('nivel');
+
+    function listar_clase(valor){
+        fetch('Gestion_clase_raza?clase='+valor)
+            .then(res => res.json())
+            .then(data => mostrarClase(data));
+    }
+
+
+    function mostrarClase(datos) {
+        document.getElementById("descripcion").value = datos.descripcion;
+        document.getElementById("dados_de_golpe").value = nivel.value+datos.dado_de_golpe;
+        document.getElementById("idiomas").value = datos.comp_armas_armadura;
+    }*/
+}
+
+
+
 
     function ficha_editar(idficha, op){
         fetch('Gestion_ficha?idficha='+idficha+'&op='+op)
@@ -23,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function(){
         document.getElementById("alineamiento").value = datos.alineamiento;
         document.getElementById("px").value = datos.px;
         document.getElementById("bono_competencia").value = datos.bono_competencia;
+        //listar_clase(document.getElementById("clase").value);
 
         var array_caract = datos.Caract;
         var iter = new Iterator(array_caract);
@@ -79,4 +104,4 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-})
+

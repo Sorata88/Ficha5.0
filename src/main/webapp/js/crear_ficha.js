@@ -18,6 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     nivel.addEventListener('change', nivel_competencia);
 
+    /*let select_raza = document.getElementById('raza');
+    let select_subraza = document.getElementById('subraza');
+    select_raza.addEventListener('change', ()=>{
+        if(select_raza.value == "Enano"){
+            select_subraza = "Enano de las colinas"
+        } else if (select_raza.value == "Elfo"){
+            select_subraza == "Alto elfo" || select_subraza == "Elfo de los bosques" || select_subraza == "Elfo oscuro (drow)"
+        }
+    });*/
+
 
     let boton_enviar = document.getElementById('boton_enviar');
 
