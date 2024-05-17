@@ -2,18 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
     var urlParams = new URLSearchParams(window.location.search);
     const idficha = urlParams.get('idficha');
     const op = urlParams.get('op');
-    ficha_editar(idficha, op);
+    if(op==2){
+        ficha_editar(idficha, op);
+    }
 })
-
-
-
 
     function ficha_editar(idficha, op){
         fetch('Gestion_ficha?idficha='+idficha+'&op='+op)
             .then(res => res.json())
             .then(data => mostrarForm(data));
     }
-
 
     function mostrarForm(datos){
         document.getElementById('idficha').value = datos.idficha;

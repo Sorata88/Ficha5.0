@@ -19,12 +19,6 @@ public class Ficha {
     private int px;
     private int bono_competencia;
     private Caracteristica Caract[] = new Caracteristica[6];
-    /*private Caracteristica Fuerza;
-    private Caracteristica Destreza;
-    private Caracteristica Constitucion;
-    private Caracteristica Inteligencia;
-    private Caracteristica Sabiduria;
-    private Caracteristica Carisma;*/
 
     public Ficha() {
     }
@@ -86,6 +80,41 @@ public class Ficha {
 
     }
 
+    public void crear_ficha() throws SQLException {
+        DAOficha.getInstance().crear_ficha(this);
+    }
+
+    public void actualizarFicha() throws SQLException {
+        DAOficha.getInstance().actualizarFicha(this);
+    }
+
+    public void borrarFicha(int id) throws SQLException {
+        DAOficha.getInstance().borrarFicha(id);
+    }
+
+    public void obtenerID(int id) throws SQLException {
+        Ficha aux = DAOficha.getInstance().obtenerID(id);
+
+        this.setIdficha(aux.getIdficha());
+        this.setNombre(aux.getNombre());
+        this.setNombrepj(aux.getNombrepj());
+        this.setRaza(aux.getRaza());
+        this.setClase(aux.getClase());
+        this.setNivel(aux.getNivel());
+        this.setTrasfondo(aux.getTrasfondo());
+        this.setAlineamiento(aux.getAlineamiento());
+        this.setPx(aux.getPx());
+        this.setBono_competencia(aux.getBono_competencia());
+        this.setCaract(aux.getCaract());
+    }
+
+    public String dameJSON() throws SQLException {
+        String json = "";
+        Gson gson = new Gson();
+        json = gson.toJson(this);
+        return json;
+    }
+
     public Caracteristica getFUE(){
     return Caract[0];
     }
@@ -109,8 +138,6 @@ public class Ficha {
     public Caracteristica getCAR(){
     return Caract[5];
     }
-
-
 
     public int getIdficha() {
         return idficha;
@@ -216,41 +243,5 @@ public class Ficha {
                 ", Caracteristicas=:" + Arrays.toString(Caract) +
                 '}';
     }
-
-    public void crear_ficha() throws SQLException {
-        DAOficha.getInstance().crear_ficha(this);
-    }
-
-    public void actualizarFicha() throws SQLException {
-        DAOficha.getInstance().actualizarFicha(this);
-    }
-
-    public void borrarFicha(int id) throws SQLException {
-        DAOficha.getInstance().borrarFicha(id);
-    }
-
-    public void obtenerID(int id) throws SQLException {
-        Ficha aux = DAOficha.getInstance().obtenerID(id);
-
-        this.setIdficha(aux.getIdficha());
-        this.setNombre(aux.getNombre());
-        this.setNombrepj(aux.getNombrepj());
-        this.setRaza(aux.getRaza());
-        this.setClase(aux.getClase());
-        this.setNivel(aux.getNivel());
-        this.setTrasfondo(aux.getTrasfondo());
-        this.setAlineamiento(aux.getAlineamiento());
-        this.setPx(aux.getPx());
-        this.setBono_competencia(aux.getBono_competencia());
-        this.setCaract(aux.getCaract());
-    }
-
-    public String dameJSON() throws SQLException {
-        String json = "";
-        Gson gson = new Gson();
-        json = gson.toJson(this);
-        return json;
-    }
-
 
 }

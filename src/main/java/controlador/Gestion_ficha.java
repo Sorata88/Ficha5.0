@@ -34,7 +34,6 @@ public class Gestion_ficha extends HttpServlet {
             Ficha n = new Ficha();
             try {
                 n.obtenerID(id);
-                System.out.println(n.dameJSON());
                 out.print(n.dameJSON());
             } catch (SQLException e) {
                 throw new RuntimeException(e);
@@ -74,8 +73,10 @@ public class Gestion_ficha extends HttpServlet {
         String alineamiento = request.getParameter("alineamiento");
         int px = Integer.parseInt(request.getParameter("px"));
         int bono = Integer.parseInt(request.getParameter("bono_competencia"));
+
         //Creo un objeto de tipo ficha con los datos recogidos.
         Ficha n = new Ficha(nombre, nombrepj, raza, clase, nivel, trasfondo, alineamiento, px, bono);
+
         //Una vez creado el objeto, puedo guardar los valores de las características en su array correspondiente.
         n.setCaract(1, Integer.parseInt(request.getParameter("FUE")), Integer.parseInt(request.getParameter("mod_fuerza")));
         n.setCaract(2, Integer.parseInt(request.getParameter("DES")), Integer.parseInt(request.getParameter("mod_destreza")));
@@ -93,7 +94,7 @@ public class Gestion_ficha extends HttpServlet {
                 n.actualizarFicha();
             }
 
-            response.sendRedirect("listar.html"); //Me manda a la lista de fichas tras terminar.
+            response.sendRedirect("listar_ficha.html"); //Me manda a la lista de fichas tras terminar.
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Error creando ficha"); //Me salta un error en el back en caso de fallo al crear.
