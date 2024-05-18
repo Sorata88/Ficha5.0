@@ -1,6 +1,16 @@
 *{
     margin: 0%;
 }
+#sesion_iniciada{
+    display: none;
+    font-family: fantasy;
+    flex-flow: row nowrap;
+    text-align: right;
+    padding: 5px;
+    background: linear-gradient(red, darkred);
+    justify-content: right;
+    border: 1px solid whitesmoke;
+}
 
 .main{
     display: grid;

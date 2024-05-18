@@ -1,7 +1,4 @@
-    function llamada() {
-        /*fetch('Gestion_ficha?op=1')
-        .then(res => res.json())
-        .then (data => pintar(data))*/
+/*    function llamada() {
         let resultados;
         let xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
@@ -59,4 +56,4 @@
     window.onload = function (){
         llamada();
     }
-
+*/

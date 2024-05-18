@@ -4,6 +4,7 @@ import DAO.DAOficha;
 import com.google.gson.Gson;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Ficha {
@@ -82,6 +83,15 @@ public class Ficha {
 
     public void crear_ficha() throws SQLException {
         DAOficha.getInstance().crear_ficha(this);
+    }
+
+    public String listar_ficha_usuario(String nombre) throws SQLException {
+       ArrayList<Ficha> aux = DAOficha.getInstance().listar_ficha_usuario(nombre);
+
+        String json = "";
+        Gson gson = new Gson();
+        json = gson.toJson(aux);
+        return json;
     }
 
     public void actualizarFicha() throws SQLException {

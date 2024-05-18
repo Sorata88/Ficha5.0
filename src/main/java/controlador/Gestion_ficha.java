@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import modelo.Ficha;
 
 import java.io.IOException;
@@ -17,46 +18,50 @@ import java.sql.SQLException;
 public class Gestion_ficha extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HttpSession sesion = request.getSession();
         PrintWriter out = response.getWriter();
 
         int opcion = Integer.parseInt(request.getParameter("op"));
-
-        if (opcion == 1) { //Listar fichas desde la base de datos.
-            try {
-                String recogerJSON = DAOficha.getInstance().listarJSON();
-                out.print(recogerJSON);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
+        try{
+            System.out.println("he llegado aqui con opcion "+opcion);
+            switch (opcion) {
+                case 1:{ //Listar fichas desde la base de datos.
+                    String recogerJSON = DAOficha.getInstance().listarJSON();
+                    out.print(recogerJSON);
+                } break;
+                case 2: { //Editar fichas existentes.
+                    int id = Integer.parseInt(request.getParameter("idficha"));
+                    Ficha n = new Ficha();
+                    n.obtenerID(id);
+                    System.out.println(n.dameJSON());
+                    out.print(n.dameJSON());
+                } break;
+                case 3: { //Borrar una ficha de la lista.
+                    int id = Integer.parseInt(request.getParameter("idficha"));
+                    String nombre_sesion = String.valueOf(sesion.getAttribute("nickname"));
+                    Ficha n = new Ficha();
+                    n.borrarFicha(id);
+                    String recogerJSON = DAOficha.getInstance().tomaJSON(nombre_sesion);
+                    out.print(recogerJSON);
+                }break;
+                case 4: { //Mostrar una ficha en modo sólo lectura.
+                    int id = Integer.parseInt(request.getParameter("idficha"));
+                    Ficha n = new Ficha();
+                    n.obtenerID(id);
+                    System.out.println(n.dameJSON());
+                    out.print(n.dameJSON());
+                }break;
+                case 5: { //Mostrar las fichas que haya creado un usuario concreto.
+                    String nombre_sesion = String.valueOf(sesion.getAttribute("nickname"));
+                    Ficha n = new Ficha();
+                    String json_user = n.listar_ficha_usuario(nombre_sesion);
+                    out.print(json_user);
+                }break;
+                default:
+                    break;
             }
-        } else if (opcion == 2) { //Editar fichas existentes.
-            int id = Integer.parseInt(request.getParameter("idficha"));
-            Ficha n = new Ficha();
-            try {
-                n.obtenerID(id);
-                out.print(n.dameJSON());
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        } else if (opcion == 3) { //Borrar una ficha de la lista.
-            int id = Integer.parseInt(request.getParameter("idficha"));
-            Ficha n = new Ficha();
-            try {
-                n.borrarFicha(id);
-                String recogerJSON = DAOficha.getInstance().listarJSON();
-                out.print(recogerJSON);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        } else if(opcion == 4) { //Mostrar una ficha en modo sólo lectura.
-            int id = Integer.parseInt(request.getParameter("idficha"));
-            Ficha n = new Ficha();
-            try {
-                n.obtenerID(id);
-                out.print(n.dameJSON());
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 

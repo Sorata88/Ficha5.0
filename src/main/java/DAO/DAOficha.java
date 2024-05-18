@@ -117,6 +117,31 @@ public class DAOficha {
         return lista_ficha;
     }
 
+    public ArrayList<Ficha> listar_ficha_usuario(String nombre) throws SQLException{
+
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM ficha WHERE nombre=?");
+        ps.setString(1, nombre);
+        ResultSet rs = ps.executeQuery();
+
+        ArrayList<Ficha> lista_ficha_usuario = null;
+        while(rs.next()) {
+            if(lista_ficha_usuario == null) {
+                lista_ficha_usuario = new ArrayList<>();
+            }
+            lista_ficha_usuario.add(new Ficha(rs.getInt(1), rs.getString(2), rs.getString(3),
+                    rs.getString(4), rs.getString(5), rs.getInt(6), rs.getString(7),
+                    rs.getString(8), rs.getInt(9), rs.getInt(10)));
+        }
+        return lista_ficha_usuario;
+    }
+
+    public String tomaJSON(String nombre) throws SQLException {
+        String json = "";
+        Gson gson = new Gson();
+        json = gson.toJson(this.listar_ficha_usuario(nombre));
+        return json;
+    }
+
     public String listarJSON() throws SQLException {
         String json = "";
         Gson gson = new Gson();

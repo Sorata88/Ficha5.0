@@ -17,15 +17,18 @@ public class Gestion_login extends HttpServlet {
     HttpSession sesion;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String opcion = request.getParameter("opt");
 
         HttpSession sesion = request.getSession(false);
             if (sesion != null) {
-                int permiso = (int)sesion.getAttribute("permiso");
-                response.getWriter().write(String.valueOf(permiso));
-            } else {
-                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Usuario no encontrado");
+                if (opcion.equals("acceso")){
+                    int permiso = (int)sesion.getAttribute("permiso");
+                    response.getWriter().write(String.valueOf(permiso));
+                } else if (opcion.equals("username")){
+                    String username = (String) sesion.getAttribute("nickname");
+                    response.getWriter().write(String.valueOf(username));
+                }
             }
-
     }
 
     @Override
@@ -42,12 +45,12 @@ public class Gestion_login extends HttpServlet {
         try {
             if(u.log_in()){
                 sesion = request.getSession();
-                sesion.setAttribute("idUsuario", u.getIdusuario());
+                sesion.setAttribute("nickname", u.getNickname());
                 sesion.setAttribute("permiso", u.getPermiso());
 
                 response.sendRedirect("index.html");
             } else {
-                response.sendRedirect("login.html");
+                response.sendRedirect("login-registro.html");
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

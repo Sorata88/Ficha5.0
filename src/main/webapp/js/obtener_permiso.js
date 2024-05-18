@@ -1,7 +1,5 @@
-
-
 function obtener_permiso(){
-    fetch("Gestion_login")
+    fetch("Gestion_login?opt=acceso")
     .then(response => {
         if (!response.ok) {
             throw new Error("Error de permisos.")
@@ -20,18 +18,18 @@ let permiso = obtener_permiso();
 
 function actualizarMenu(permiso){
     let elementoRegistro = document.getElementById("registro");
-    let elementoLogOut = document.getElementById("logout");
+    //let elementoLogOut = document.getElementById("sesion_iniciada");
 
     if (permiso == 1) {
         elementoRegistro.innerHTML = "ADMIN";
         elementoRegistro.href = "admin.html";
-        elementoLogOut.style.display = "inline-block";
+        //elementoLogOut.style.display = "block";
     } else if (permiso == 5) {
         elementoRegistro.style.display = "none";
-        elementoLogOut.style.display = "inline-block";
+        //elementoLogOut.style.display = "inline-block";
     } else {
         elementoRegistro.innerHTML = "ACCESO/REGISTRO";
         elementoRegistro.href = "login-registro.html";
-        elemetoLogOut.style.display = "none";
+        //elementoLogOut.style.display = "none";
     }
 }

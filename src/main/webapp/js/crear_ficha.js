@@ -1,7 +1,3 @@
-
-
-
-
     var level = document.getElementById('nivel');
     var bonoCompetencia = document.getElementById('bono_competencia');
 

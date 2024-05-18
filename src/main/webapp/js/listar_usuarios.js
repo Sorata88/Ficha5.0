@@ -1,4 +1,4 @@
-function llamada() {
+function llamada_usuarios() {
     let resultados;
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -48,5 +48,5 @@ function borrarUsuario(idusuario) {
 }
 
 window.onload = function (){
-    llamada();
+    llamada_usuarios();
 }
