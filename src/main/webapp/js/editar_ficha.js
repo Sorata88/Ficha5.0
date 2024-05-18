@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var urlParams = new URLSearchParams(window.location.search);
     const idficha = urlParams.get('idficha');
     const op = urlParams.get('op');
-    if(op==2){
+    if(op==2 || op==4){
         ficha_editar(idficha, op);
     }
 })
