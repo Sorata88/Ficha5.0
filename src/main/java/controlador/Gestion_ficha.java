@@ -41,8 +41,13 @@ public class Gestion_ficha extends HttpServlet {
                     String nombre_sesion = String.valueOf(sesion.getAttribute("nickname"));
                     Ficha n = new Ficha();
                     n.borrarFicha(id);
-                    String recogerJSON = DAOficha.getInstance().tomaJSON(nombre_sesion);
-                    out.print(recogerJSON);
+                    if (nombre_sesion.equals("admin")) {
+                        String recogerJSON = DAOficha.getInstance().listarJSON();
+                        out.print(recogerJSON);
+                    } else {
+                        String recogerJSON = DAOficha.getInstance().tomaJSON(nombre_sesion);
+                        out.print(recogerJSON);
+                    }
                 }break;
                 case 4: { //Mostrar una ficha en modo sólo lectura.
                     int id = Integer.parseInt(request.getParameter("idficha"));
@@ -91,7 +96,7 @@ public class Gestion_ficha extends HttpServlet {
         n.setCaract(6, Integer.parseInt(request.getParameter("CAR")), Integer.parseInt(request.getParameter("mod_carisma")));
 
         try { //Si el id está vacío, creará una nueva ficha.
-            if (id == ""){
+            if (id.isEmpty()){
                 n.crear_ficha();
             } else { //En caso contrario, editará la ficha a la que pertenece ese id.
                 int idficha = Integer.parseInt(id);

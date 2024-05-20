@@ -20,15 +20,26 @@ public class Gestion_login extends HttpServlet {
         String opcion = request.getParameter("opt");
 
         HttpSession sesion = request.getSession(false);
-            if (sesion != null) {
-                if (opcion.equals("acceso")){
-                    int permiso = (int)sesion.getAttribute("permiso");
-                    response.getWriter().write(String.valueOf(permiso));
-                } else if (opcion.equals("username")){
-                    String username = (String) sesion.getAttribute("nickname");
-                    response.getWriter().write(String.valueOf(username));
+            if (opcion.equals("acceso")){
+                int permiso = 0;
+                if (sesion != null){
+                    permiso = (int)sesion.getAttribute("permiso");
                 }
+                response.getWriter().write(String.valueOf(permiso));
+            } else if (opcion.equals("username")){
+                String username = "";
+                if (sesion != null){
+                    username = (String) sesion.getAttribute("nickname");
+                }
+                response.getWriter().write(String.valueOf(username));
+            } else if (opcion.equals("logout")){
+                if (sesion != null){
+                    sesion.invalidate();
+                    response.sendRedirect("index.html");
+                }
+
             }
+
     }
 
     @Override

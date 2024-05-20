@@ -4,11 +4,13 @@
     flex-flow: row nowrap;
     font-size: xxx-large;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 15px;
     background: linear-gradient(darkred, red);
     justify-content: center;
-    height: 140px;
-    border-style: groove;
+    height: 130px;
+    border-top: 2px solid whitesmoke;
+    border-left: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
 }
 .barra{
     display: grid;
@@ -56,5 +58,20 @@
     padding-top: 1px;
     padding-right: 10px;
     animation: fuego 1s linear infinite alternate;
-
+}
+#sesion_iniciada{
+    display: block;
+    height: 20px;
+    font-family: fantasy;
+    flex-flow: row nowrap;
+    text-align: right;
+    padding: 4px;
+    background: linear-gradient(red, darkred);
+    border-bottom: 2px solid whitesmoke;
+    border-left: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
+}
+#check_sesion{
+    font-size: large;
+    display: none;   
 }

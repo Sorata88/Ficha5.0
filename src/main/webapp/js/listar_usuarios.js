@@ -22,7 +22,7 @@ function llamada_usuarios() {
 
 function pintar(datos) {
 
-    let html = "<table>";
+    let html = "<table style='margin: 0 auto'>";
     html += "<tr><th>Idusuario</th><th>Nombre de usuario</th><th>Correo</th><th>Contraseña</th><th>Permiso</th></tr>"
     for (let i = 0; i < datos.length; i++) {
         html +=

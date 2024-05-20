@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/header.css">
-    <script src="js/obtener_permiso.js" defer></script>
-    <title>Ficha 5.0</title>
-</head>
-<body style="font-family: fantasy">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" href="Image/dado1.png" type="image/x-icon">
+      <link rel="stylesheet" href="css/index.css">
+      <link rel="stylesheet" href="css/header.css">
+      <script src="js/obtener_permiso.js" defer></script>
+      <title>Ficha 5.0</title>
+  </head>
+  <body style="font-family: fantasy">
     <header>
         <div class="titulo">
             <div class="logo">
-                <img src="Image/DnD-50.webp" alt="logo50" width=40%>
+                <img src="Image/DnD-50.webp" alt="logo50" width=35%>
             </div>
-            <label for="titulo1">¡BIENVENIDOS A FICHA 5.0! ¡TU HERRAMIENTA WEB PARA CREAR FICHAS DE PERSONAJE PARA EL JUEGO DE ROL MÁS FAMOSO DE TODOS LOS TIEMPOS!</label>
+            <label for="titulo">¡BIENVENIDOS A FICHA 5.0! ¡TU HERRAMIENTA WEB PARA CREAR FICHAS DE PERSONAJE PARA EL JUEGO DE ROL MÁS FAMOSO DE TODOS LOS TIEMPOS!</label>
         </div>
-        <div id="sesion_iniciada">hola que tal jaja</div>
-    </header>
-    <nav>
-        <div class="barra">
+        <div id="sesion_iniciada">
+            <div id="check_sesion" style="font-size: large;">Bienvenido/a! <img src="Image/user3.ico" width="1%"><a href="index.html"><input type="button" id="logout" value="Cerrar sesión"></a></div>
+        </div>
+      <div class="barra">
             <div class="boton">
                 <a href="ficha.html">FICHA DE PERSONAJE</a>
             </div>
@@ -27,7 +28,7 @@
                 <a href="diario.html">DIARIO DEL AVENTURERO</a>
             </div>
             <div class="logo_fuego">
-                <a href="https://dnd.wizards.com/es"><img src="Image/fuego.fw.png" width="116%"></a>
+                <a href="https://dnd.wizards.com/es"><img src="Image/fuego.fw.png" width="117%"></a>
             </div>
             <div class="boton">
                 <a href="listar_ficha.html" id="alijo">ALIJO DEL JUGADOR</a>
@@ -35,11 +36,11 @@
             <div class="boton">
                 <a href="login-registro.html" id="registro">ACCESO/REGISTRO</a>
             </div>
-        </div>
-    </nav>
+      </div>
+    </header>
     <section>
         <div class="main">
-            <img src="Image/principal.png" alt="foto_main">
+            <img src="Image/principal.png" alt="foto_main" height="100%">
             <p>Dungeons & Dragons (Dragones y mazmorras en español) es un juego de rol 
                 de fantasía heroica considerado como el padre de los juegos de rol modernos. 
                 Creado en EE.UU. por Gary Gygax y Dave Arneson, su primera publicación fue en 1974.
@@ -61,15 +62,12 @@
                 Coincidiendo con su 50º aniversario, he querido rendirle homenaje creando una 
                 herramienta web de gestión de fichas de personajes para todos aquellos jugadores 
                 que les gusta tener bien localizados a todos sus alter ego en formato digital. 
-                </p>
-
+            </p>
         </div>
-
     </section>
     <footer>
-        <label for="pie_pagina">Proyecto integrador para 1ºDAW-DAM del Instituto de Formación profesional Antonio de Nebrija. Curso 2023-2024.</label><br>
-        <label for="">Dungeons & Dragons es una marca registrada por Wizards of the Coast. Esta es una Web sin ánimo de lucro.</label>
+        <label for="pie_pagina">Aplicación web creada por Alejandro Ortera García como proyecto integrador para 1ºDAW-DAM del Instituto de Formación profesional Antonio de Nebrija. Curso 2023-2024.
+            Dungeons & Dragons es una marca registrada por Wizards of the Coast. Web sin ánimo de lucro. ¡Tira por iniciatva!</label>
     </footer>
-    
-</body>
+  </body>
 </html>

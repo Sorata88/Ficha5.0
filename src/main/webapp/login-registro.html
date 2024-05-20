@@ -3,27 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Image/dado1.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
+    <script src="js/obtener_permiso.js" defer></script>
     <title>Ficha 5.0</title>
 </head>
 <body style="background-color: bisque;">
     <header>
         <div class="titulo">
             <div class="logo">
-                <img src="Image/DnD-50.webp" alt="logo50" width=40%>
+                <img src="Image/DnD-50.webp" alt="logo50" width=35%>
             </div>
-            <label for="titulo1">¡BIENVENIDOS A FICHA 5.0! ¡TU HERRAMIENTA WEB PARA CREAR FICHAS DE PERSONAJE PARA EL JUEGO DE ROL MÁS FAMOSO DE TODOS LOS TIEMPOS!</label>
+            <label for="titulo">¡BIENVENIDOS A FICHA 5.0! ¡TU HERRAMIENTA WEB PARA CREAR FICHAS DE PERSONAJE PARA EL JUEGO DE ROL MÁS FAMOSO DE TODOS LOS TIEMPOS!</label>
+        </div>
+        <div id="sesion_iniciada">
+            <div id="check_sesion" style="font-size: large;"><img src="Image/user3.ico" width="1%"><a href="index.html" id="logout"> Salir de la sesión</a></div>
         </div>
         <div class="barra">
             <div class="boton">
-                <a href="index.html">PÁGINA PRINCIPAL</a>
+                <a href="ficha.html">FICHA DE PERSONAJE</a>
             </div>
             <div class="boton">
                 <a href="diario.html">DIARIO DEL AVENTURERO</a>
             </div>
             <div class="logo_fuego">
-                <a href="https://dnd.wizards.com/es"><img src="Image/fuego.fw.png" width="116%"></a>
+                <a href="https://dnd.wizards.com/es"><img src="Image/fuego.fw.png" width="117%"></a>
             </div>
             <div class="boton">
                 <a href="listar_ficha.html" id="alijo">ALIJO DEL JUGADOR</a>
@@ -46,7 +51,7 @@
                     <input type="password" name="password" id="password"><br><br>
                     <label for="email">Correo electrónico:</label><br><br>
                     <input type="email" name="correo" id="correo"><br><br>
-                    <input type="submit" id="boton_enviar" style="font-size: large;">
+                    <input type="submit" id="boton_registro" style="font-size: large;">
                 </form>
 
             </div><br>
@@ -58,7 +63,7 @@
                     <input type="text" name="usuario" id="usuario"><br><br>
                     <label for="contrasena">Contraseña:</label><br><br>
                     <input type="password" name="contrasena" id="contrasena"><br><br>
-                    <input type="submit" value="iniciar sesión" style="font-size: large;">                
+                    <input type="submit" value="iniciar sesión" id="inicio_sesion" style="font-size: large;">
                 </form>
 
             </div>

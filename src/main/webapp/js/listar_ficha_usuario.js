@@ -1,22 +1,23 @@
-    function llamada(username){
-        let opcion_gestion = 0;
-        if(username == "admin"){
-            opcion_gestion = 1
-        } else {
-            opcion_gestion = 5
-        }
-        fetch('Gestion_ficha?op='+opcion_gestion)
-            .then(res => res.json())
-            .then(data => pintar(data));
+function llamada(username){
+    let opcion_gestion = 0;
+    if(username == "admin"){
+        opcion_gestion = 1
+    } else if (username == "") {
+        opcion_gestion = 0
+    } else {
+        opcion_gestion = 5
     }
+    fetch('Gestion_ficha?op='+opcion_gestion)
+        .then(res => res.json())
+        .then(data => pintar(data));
+}
 
 
 
 
-    function pintar(ficha) {
-
+function pintar(ficha) {
     let html = "<table>";
-    html += "<tr><th hidden=''>Idficha</th><th>Nombre del jugador</th><th>Nombre del personaje</th><th>Raza</th><th>Clase</th><th>Nivel</th><th>Trasfondo</th><th>Alineamiento</th><th>Puntos de experiencia</th><th>Bono de competencia</th></tr>"
+    html += "<tr><th hidden=''>Idficha</th><th>Nombre del jugador</th><th>Nombre del personaje</th><th>Raza</th><th>Clase</th><th> Nivel </th><th>Trasfondo</th><th>Alineamiento</th><th>Puntos de experiencia</th><th>Bono de competencia</th></tr>"
     for (let i = 0; i < ficha.length; i++) {
         html +=
             "<tr><td hidden>" + ficha[i].idficha +
@@ -29,7 +30,7 @@
             "</td><td>" + ficha[i].alineamiento +
             "</td><td>" + ficha[i].px +
             "</td><td>+" + ficha[i].bono_competencia +
-            "</td><td><a href='ficha.html?idficha="+ficha[i].idficha+"&op=4'>Ver ficha</a>" +
+            "</td><td><a href='ficha_readonly.html?idficha="+ficha[i].idficha+"&op=4'>Ver ficha</a>" +
             "</td><td><a href='ficha.html?idficha="+ficha[i].idficha+"&op=2'>Editar</a>" +
             "</td><td><a href='javascript:borrarFicha("+ficha[i].idficha+")'>Borrar</a>" +
             "</td></tr>";
@@ -56,12 +57,10 @@ function obtener_nickname(){
         })
         .then (username => {
             llamada(username);
-
         })
 }
 
 
 window.onload = function (){
-    obtener_nickname();
-
+    obtener_nickname()
 }

@@ -12,7 +12,6 @@ textarea{
     border-style:groove;
     text-align: center;
     font-size: x-large;
-
 }
 nav{
     width: 99,5%;
@@ -144,4 +143,7 @@ nav{
     padding: 5px;
     padding-left: 15px;
     padding-right: 14px;
+}
+#boton_enviar{
+    display: block;
 }

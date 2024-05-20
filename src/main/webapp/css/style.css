@@ -2,17 +2,7 @@
     margin: 0%;
     font-family: fantasy;
 }
-.titulo{
-    display: flex;
-    flex-flow: row nowrap;
-    font-size: xxx-large;
-    text-align: center;
-    padding-top: 20px;
-    background: linear-gradient(darkred, red);
-    justify-content: center;
-    height: 150px;
-    border-style: groove; 
-}
+
 .main{
     background-size: cover;
     width: 100%;
@@ -56,7 +46,7 @@ button{
     padding-top: 50px;
     padding-left: 50px;
     background-size: cover;
-    height: 600px;
+    height: 590px;
     background-color: blanchedalmond;
     box-shadow: 0 0 20px 20px burlywood inset;
     justify-content: center;
@@ -66,17 +56,18 @@ button{
     padding-top: 50px;
     padding-left: 50px;
     background-size: cover;
-    height: 600px;
+    height: 590px;
     background-color: blanchedalmond;
     box-shadow: 0 0 20px 20px burlywood inset;
     justify-content: center;
     text-align: center;
+    margin: 0 auto;
 }
 .working{
     padding-top: 50px;
     background-color: blanchedalmond;
     box-shadow: 0 0 20px 20px burlywood inset;
-    height: 685px;
+    height: 683px;
     background-size: cover;
     font-size: xxx-large;
     text-align: center;

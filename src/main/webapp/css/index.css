@@ -1,29 +1,21 @@
 *{
     margin: 0%;
 }
-#sesion_iniciada{
-    display: none;
-    font-family: fantasy;
-    flex-flow: row nowrap;
-    text-align: right;
-    padding: 5px;
-    background: linear-gradient(red, darkred);
-    justify-content: right;
-    border: 1px solid whitesmoke;
-}
 
 .main{
+    height: 594px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
     font-size: x-large;
     padding: 2px;
     border-style: groove;
-    background-color: blanchedalmond;
+    background: linear-gradient(bisque, #d58d5a);
+    //background-color: #fde4be;
 }
 footer{
     border-style: groove;
     background: linear-gradient(rgb(114, 162, 204), azure);
-    height: 44px;
+    height: 25px;
     padding: 5px 0 0 10px;
 }
