@@ -59,80 +59,80 @@ public class Usuario {
     }
 
     /**
-     * Método para recibir el valor actual del id del objeto usuario.
-     * @return devuelve el id del usuario.
+     * Método para recibir el valor actual del atributo "idusuario" del objeto usuario.
+     * @return devuelve el valor del atributo "idusuario" del objeto usuario.
      */
     public int getIdusuario() {
         return idusuario;
     }
 
     /**
-     * Método para modificar el valor del atributo id del objeto usuario.
-     * @param idusuario el nuevo valor que va a tener nuestro atributo id del objeto usuario.
+     * Método para modificar el valor del atributo "idusuario" del objeto usuario.
+     * @param idusuario el nuevo valor que va a tener nuestro atributo "idusuario" del objeto usuario.
      */
     public void setIdusuario(int idusuario) {
         this.idusuario = idusuario;
     }
 
     /**
-     * Método para recibir el valor actual del atributo nickname del objeto usuario.
-     * @return devuelve el valor del atributo nickname del objeto usuario.
+     * Método para recibir el valor actual del atributo "nickname" del objeto usuario.
+     * @return devuelve el valor del atributo "nickname" del objeto usuario.
      */
     public String getNickname() {
         return nickname;
     }
 
     /**
-     * Método para modificar el valor del atributo nickname del objeto usuario.
-     * @param nickname el nuevo valor que va a tener nuestro atributo nickname del objeto usuario.
+     * Método para modificar el valor del atributo "nickname" del objeto usuario.
+     * @param nickname el nuevo valor que va a tener nuestro atributo "nickname" del objeto usuario.
      */
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
 
     /**
-     * Método para recibir el valor actual del atributo correo del objeto usuario.
-     * @return devuelve el valor del atributo correo del objeto usuario.
+     * Método para recibir el valor actual del atributo "correo" del objeto usuario.
+     * @return devuelve el valor del atributo "correo" del objeto usuario.
      */
     public String getCorreo() {
         return correo;
     }
 
     /**
-     * Método para modificar el valor del atributo correo del objeto usuario.
-     * @param correo el nuevo valor que va a tener nuestro atributo correo del objeto usuario.
+     * Método para modificar el valor del atributo "correo" del objeto usuario.
+     * @param correo el nuevo valor que va a tener nuestro atributo "correo" del objeto usuario.
      */
     public void setCorreo(String correo) {
         this.correo = correo;
     }
 
     /**
-     * Método para recibir el valor actual del atributo password del objeto usuario.
-     * @return devuelve el valor del atributo password del objeto usuario.
+     * Método para recibir el valor actual del atributo "password" del objeto usuario.
+     * @return devuelve el valor del atributo "password" del objeto usuario.
      */
     public String getPassword() {
         return password;
     }
 
     /**
-     * Método para modificar el valor del atributo password del objeto usuario.
-     * @param password el nuevo valor que va a tener nuestro atributo password del objeto usuario.
+     * Método para modificar el valor del atributo "password" del objeto usuario.
+     * @param password el nuevo valor que va a tener nuestro atributo "password" del objeto usuario.
      */
     public void setPassword(String password) {
         this.password = password;
     }
 
     /**
-     * Método para recibir el valor actual del atributo permiso del objeto usuario.
-     * @return devuelve el valor del atributo permiso del objeto usuario.
+     * Método para recibir el valor actual del atributo "permiso" del objeto usuario.
+     * @return devuelve el valor del atributo "permiso" del objeto usuario.
      */
     public int getPermiso() {
         return permiso;
     }
 
     /**
-     * Método para modificar el valor del atributo permiso del objeto usuario.
-     * @param permiso el nuevo valor que va a tener nuestro atributo permiso del objeto usuario.
+     * Método para modificar el valor del atributo "permiso" del objeto usuario.
+     * @param permiso el nuevo valor que va a tener nuestro atributo "permiso" del objeto usuario.
      */
     public void setPermiso(int permiso) {
         this.permiso = permiso;
@@ -170,7 +170,7 @@ public class Usuario {
     }
 
     /**
-     * Método para borrar un objeto de tipo usuario de la base de datos. Necesitaremos el identificado de ese objeto
+     * Método para borrar un objeto de tipo usuario de la base de datos. Necesitaremos el identificador de ese objeto
      * para poder eliminarlo de la base de datos. Llamaremos el método eliminar usuario de la capa DAO.
      * @param id el atributo id del objeto de tipo usuario que deseamos borrar de la base de datos.
      * @throws SQLException lanza una excepción de tipo SQL.

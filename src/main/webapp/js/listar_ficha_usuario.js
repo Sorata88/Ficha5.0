@@ -12,11 +12,8 @@ function llamada(username){
         .then(data => pintar(data));
 }
 
-
-
-
 function pintar(ficha) {
-    let html = "<table>";
+    let html = "<table style='margin: 0 auto'>";
     html += "<tr><th hidden=''>Idficha</th><th>Nombre del jugador</th><th>Nombre del personaje</th><th>Raza</th><th>Clase</th><th> Nivel </th><th>Trasfondo</th><th>Alineamiento</th><th>Puntos de experiencia</th><th>Bono de competencia</th></tr>"
     for (let i = 0; i < ficha.length; i++) {
         html +=
@@ -62,5 +59,5 @@ function obtener_nickname(){
 
 
 window.onload = function (){
-    obtener_nickname()
+    obtener_nickname();
 }

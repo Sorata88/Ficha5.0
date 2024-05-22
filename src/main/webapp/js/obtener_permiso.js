@@ -47,18 +47,3 @@ function actualizarMenu(permiso){
         boton_crear.style.display = "none";
     }
 }
-function obtener_nickname(){
-    fetch("Gestion_login?opt=username")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Error de usuario.")
-            }
-            return response.text();
-        })
-        .then (username => {
-
-        })
-}
-let dame_nombre = obtener_nickname();
-
-
