@@ -231,8 +231,8 @@ public class Usuario {
      * Método para encriptar la contraseña del objeto de tipo usuario. Es un proceso requerido debido a la actual
      * Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.
      * @see "https://www.boe.es/buscar/pdf/2018/BOE-A-2018-16673-consolidado.pdf"
-     * @param input
-     * @return
+     * @param input el atributo password que le pasaremos al método como parámetro.
+     * @return devuelve el atributo password encriptado.
      */
     public static String getMD5(String input) {
         try {

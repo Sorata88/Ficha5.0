@@ -23,7 +23,7 @@ public class DAOficha {
     private static DAOficha instance = null;
 
     /**
-     *
+     * Método que nos permite conectarnos a la base de datos.
      * @throws SQLException lanza una excepción de tipo SQL.
      */
     public DAOficha() throws SQLException {

@@ -136,7 +136,7 @@ public class Ficha {
      * Método para listar un sólo objeto de tipo ficha asociado a un atributo nombre de un objeto de tipo usuario usuario (único).
      * @param nombre atributo que le vamos a pasar al método para obtener el objeto ficha que deseamos.
      * @return devuelve el objeto de tipo String llamado json con los atributos del objeto de tipo ficha almacenado.
-     * @throws SQLException
+     * @throws SQLException lanza una excepción de tipo SQL.
      */
     public String listar_ficha_usuario(String nombre) throws SQLException {
        ArrayList<Ficha> aux = DAOficha.getInstance().listar_ficha_usuario(nombre);
