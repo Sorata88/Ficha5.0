@@ -10,17 +10,32 @@ import java.util.ArrayList;
 
 import com.google.gson.Gson;
 
-
+/**
+ * Clase DAO (Data Access Objet) de la clase ficha. Permite encapsular toda la lógica de acceso a datos del resto de
+ * la aplicación.
+ * Todos los atributos de esta clase son privados y por tanto no aparecerán en la documentación.
+ * @author AOG.
+ * @version 1.0.0
+ */
 public class DAOficha {
 
     private Connection conn = null;
     private static DAOficha instance = null;
 
-
+    /**
+     *
+     * @throws SQLException lanza una excepción de tipo SQL.
+     */
     public DAOficha() throws SQLException {
         conn = DBconnection.getConnection();
     }
 
+    /**
+     * Método que implementa el patrón de diseño "Singleton" para la clase ficha. Sólo permite una instancia de la
+     * clase para toda la aplicación. Si no existe, creará el objeto, en caso contrario, lo invocará desde la memoria.
+     * @return devuelve el objeto DAO de la clase ficha.
+     * @throws SQLException lanza una excepción de tipo SQL.
+     */
     public static DAOficha getInstance() throws SQLException {
         if(instance == null){
             instance = new DAOficha();
@@ -28,40 +43,11 @@ public class DAOficha {
         return instance;
     }
 
-    public void insertarCaract( int idFicha, int idCaract, int punt, int mod){
-        String query = "INSERT INTO caracteristica_ficha (idficha, idcaract, puntuacion, modificador) VALUES (?, ?, ?, ?)";
-
-        try (PreparedStatement ps = conn.prepareStatement(query)) {
-            ps.setInt(1, idFicha);
-            ps.setInt(2, idCaract);
-            ps.setInt(3, punt);
-            ps.setInt(4, mod);
-
-            ps.executeUpdate();
-            ps.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void actualizarCaract( int idFicha, int idCaract, int punt, int mod){
-        String query = "UPDATE caracteristica_ficha SET puntuacion=?, modificador=? WHERE idficha=? and idcaract=?";
-
-        try {
-            PreparedStatement ps = conn.prepareStatement(query);
-            ps.setInt(1, punt);
-            ps.setInt(2, mod);
-            ps.setInt(3, idFicha);
-            ps.setInt(4, idCaract);
-
-            ps.executeUpdate();
-            ps.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
+    /**
+     * Método para insertar un nuevo objeto de tipo ficha en la base de datos.
+     * @param n objeto de tipo ficha que le pasamos al método como parámetro.
+     * @throws SQLException lanza una excepción de tipo SQL.
+     */
     public void crear_ficha(Ficha n) throws SQLException{
 
         String query = "INSERT INTO ficha (idficha, nombre, nombrepj, raza, clase, nivel, trasfondo, alineamiento, px, bono_competencia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -100,6 +86,61 @@ public class DAOficha {
         insertarCaract(n.getIdficha(), n.getCAR().getIdCaract(), n.getCAR().getPuntuacion(), n.getCAR().getModificador());
     }
 
+    /**
+     * Método para insertar los objetos de tipo caracteristica en la base de datos en una tabla relacional para un
+     * objeto de tipo ficha determinado.
+     * @param idFicha atributo idficha que relaciona los objetos caracteristica con un objeto ficha.
+     * @param idCaract atributo identificador único de cada objeto de tipo caracteristica.
+     * @param punt atributo puntuacion para el objeto de tipo caracteristica.
+     * @param mod atributo modificador para el objeto de tipo caracteristica.
+     */
+    public void insertarCaract( int idFicha, int idCaract, int punt, int mod){
+        String query = "INSERT INTO caracteristica_ficha (idficha, idcaract, puntuacion, modificador) VALUES (?, ?, ?, ?)";
+
+        try (PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setInt(1, idFicha);
+            ps.setInt(2, idCaract);
+            ps.setInt(3, punt);
+            ps.setInt(4, mod);
+
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Método para actualizar los atributos de un objeto de tipo caracteristica concreto para un objeto de tipo ficha
+     * en particular.
+     * @param idFicha atributo idficha que relaciona los objetos caracteristica con un objeto ficha.
+     * @param idCaract atributo identificador único de cada objeto de tipo caracteristica.
+     * @param punt atributo puntuacion para el objeto de tipo caracteristica.
+     * @param mod atributo modificador para el objeto de tipo caracteristica.
+     */
+    public void actualizarCaract( int idFicha, int idCaract, int punt, int mod){
+        String query = "UPDATE caracteristica_ficha SET puntuacion=?, modificador=? WHERE idficha=? and idcaract=?";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setInt(1, punt);
+            ps.setInt(2, mod);
+            ps.setInt(3, idFicha);
+            ps.setInt(4, idCaract);
+
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    /**
+     * Método para recoger todos los objetos de tipo ficha de la base de datos y almacenarlos en un "array" de fichas.
+     * @return devuelve el "array" de objetos de tipo ficha.
+     * @throws SQLException lanza una excepción de tipo SQL.
+     */
     public ArrayList<Ficha> listar_ficha() throws SQLException{
 
         PreparedStatement ps = conn.prepareStatement("SELECT * FROM ficha");
@@ -117,6 +158,13 @@ public class DAOficha {
         return lista_ficha;
     }
 
+    /**
+     * Método para recoger todos los objetos de tipo ficha de la base de datos con un atributo "nombre" determinado
+     * y almacenarlos en un "array" de fichas.
+     * @param nombre atributo nombre del objeto de tipo ficha que queremos usar para filtrar.
+     * @return devuelve el "array" de objetos de tipo ficha.
+     * @throws SQLException lanza una excepción de tipo SQL.
+     */
     public ArrayList<Ficha> listar_ficha_usuario(String nombre) throws SQLException{
 
         PreparedStatement ps = conn.prepareStatement("SELECT * FROM ficha WHERE nombre=?");
@@ -135,6 +183,12 @@ public class DAOficha {
         return lista_ficha_usuario;
     }
 
+    /**
+     * Método para convertir el "array" de objetos de tipo ficha recuperado en el método "listar_ficha_usuario" anterior.
+     * @param nombre atributo del objeto de tipo ficha que le pasamos al método como parámetro.
+     * @return devuelve el objeto de tipo String con todos los datos del array en formato JSON.
+     * @throws SQLException lanza una excepción de tipo SQL.
+     */
     public String tomaJSON(String nombre) throws SQLException {
         String json = "";
         Gson gson = new Gson();
@@ -142,6 +196,11 @@ public class DAOficha {
         return json;
     }
 
+    /**
+     * Método para convertir el "array" de objetos de tipo ficha recuperado en el método "listar_ficha" anterior.
+     * @return devuelve el objeto de tipo String con todos los datos del array en formato JSON.
+     * @throws SQLException lanza una excepción de tipo SQL.
+     */
     public String listarJSON() throws SQLException {
         String json = "";
         Gson gson = new Gson();
@@ -149,6 +208,12 @@ public class DAOficha {
         return json;
     }
 
+    /**
+     * Método para recuperar un objeto concreto de tipo ficha de la base de datos usando su identificador único.
+     * @param id atributo del objeto de tipo ficha que le pasamos al método como parámetro.
+     * @return devuelve el objeto de tipo ficha deseado.
+     * @throws SQLException lanza una excepción de tipo SQL.
+     */
     public Ficha obtenerID(int id) throws SQLException{
         String query = "SELECT * FROM ficha WHERE idficha = ?";
         PreparedStatement ps = conn.prepareStatement(query);
@@ -169,6 +234,11 @@ public class DAOficha {
         return n;
     }
 
+    /**
+     * Método para actualizar los datos (atributos) de un objeto de tipo ficha ya existente en la base de datos.
+     * @param n objeto de tipo ficha que le pasamos al método como parámentro.
+     * @throws SQLException lanza una excepción de tipo SQL.
+     */
     public void actualizarFicha(Ficha n) throws SQLException{
 
         String query = "UPDATE ficha SET nombre=?, nombrepj=?, raza=?, clase=?, nivel=?, trasfondo=?, alineamiento=?, px=?, bono_competencia=? WHERE idficha=?";
@@ -201,6 +271,11 @@ public class DAOficha {
         actualizarCaract(n.getIdficha(), n.getCAR().getIdCaract(), n.getCAR().getPuntuacion(), n.getCAR().getModificador());
     }
 
+    /**
+     * Método para eliminar un objeto de tipo ficha de la base de datos.
+     * @param idficha el atributo identificativo de la ficha que queremos borrar.
+     * @throws SQLException lanza una excepción de tipo SQL.
+     */
     public void borrarFicha(int idficha) throws SQLException {
         String query = "DELETE FROM caracteristica_ficha WHERE idficha=?";
         PreparedStatement ps = conn.prepareStatement(query);
@@ -213,8 +288,4 @@ public class DAOficha {
         ps.close();
         ps2.close();
     }
-
-
-
-
 }
